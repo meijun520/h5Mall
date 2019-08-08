@@ -1,0 +1,30 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    // "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    // "eslint.autoFixOnSave":true,
+    "path-intellisense.extensionOnImport": true,
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "npm-intellisense.importES6": true,
+    "projectManager.groupList": true,
+    "explorer.confirmDelete": false,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",{
+            "language": "vue",
+            "autoFix": true
+        },"html",
+        "vue"
+    ],
+    "react.beautify.onSave": true,
+    "react.beautify.formatter": "esformatter",
+    "emmet.triggerExpansionOnTab": true,
+    //"editor.formatOnSave": true,
+    "clang-format.executable": "/absolute/path/to/clang-format",
+    "vsicons.dontShowNewVersionMessage": true,
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "workbench.sideBar.location": "left",
+    "gitlens.gitExplorer.files.layout": "tree",
+    "extensions.ignoreRecommendations": false,
+    "gitlens.views.repositories.files.layout": "tree"
+}

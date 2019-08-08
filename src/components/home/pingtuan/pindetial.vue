@@ -1,0 +1,110 @@
+<template>
+  <div class="pin">
+    <div class="white">
+      <div class="red">
+        <div class="header">
+          <x-icon type="ios-arrow-back" size="30" @click.native="toback()"></x-icon>
+          <span>拼团详情</span>
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <goods-detial class="detial"></goods-detial>
+      <div style=" margin-top:0.5rem">
+        <img src="./img.png" style="margin-top:1rem;
+    margin-left: 3rem;" />
+        <div>
+          <clocker class="clock">
+            <span>00</span>:
+            <span>00</span>:
+            <span>00</span>
+          </clocker>
+        </div>
+        <p style="width:9rem; margin:auto">2人成团，还差1人</p>
+        <div style="width:9rem; margin:auto; ">
+          <img src="">
+          <img src="" >
+        </div>
+        <x-button type="warn">立即参团</x-button>
+        <div style="color:#999999; font-size:0.69rem;width:11rem; margin:auto">
+          拼团须知 人满发货，人不满退款
+        </div>
+      </div>
+      <youLike class="like"></youLike>
+    </div>
+   
+  </div>
+</template>
+
+<script>
+import goodsDetial from '@/components/group/goodsdetial'
+import { Clocker, XButton } from 'vux'
+import youLike from '@/components/group/youlike'
+export default {
+  components: {
+    goodsDetial: goodsDetial,
+    Clocker,
+    XButton,
+    youLike: youLike
+  },
+  data () {
+    return {
+      list: [
+        { name: '1', img: '', cost: '1', count: 1 },
+        { name: '1', img: '', cost: '2', count: 2 },
+        { name: '2', img: '', cost: '3', count: 3 }
+      ]
+    }
+  },
+  methods: {
+    toback () {
+      this.$router.push('/')
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.pin {
+  background-color: #ffffff!important;
+  .header {
+    margin-top: 19.5rem;
+    margin-left: -19rem;
+    color: #ffffff;
+    span {
+      position: relative;
+      top: -0.5rem;
+      left: 8rem;
+      font-size: 1rem;
+    }
+    .vux-x-icon {
+      fill: #ffffff;
+    }
+  }
+  .padding {
+    padding: 0.75rem;
+    position: relative;
+    top: 24rem;
+    .detial {
+      box-shadow: 0px 0.18rem 0.375rem 0px rgba(255, 228, 233, 1);
+      border-radius: 0.31rem;
+    }
+    .clock {
+      color: #ff2550;
+      margin-left: 7.5rem;
+      span {
+        background-color: #ff2550;
+        margin: 0.5rem;
+        color: #ffffff;
+      }
+    }
+    button.weui-btn, input.weui-btn{
+      width: 70%;
+    }
+  }
+  .like{
+    background-color: #ffffff;
+    fill: #F70968;
+  }
+}
+</style>
