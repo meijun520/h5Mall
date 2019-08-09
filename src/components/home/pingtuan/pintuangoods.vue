@@ -92,7 +92,8 @@
          <div class="item-head">
           <span >宝贝评价（456）</span>
           <p class="fr word">查看全部
-            <img :src="moreicon" />
+            <img :src="moreicon"  alt=""/>
+
           </p>
            
         </div>
