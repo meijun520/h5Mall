@@ -85,7 +85,7 @@ export default {
       return require('./img/' + icon + '.png')
     },
     getzhu () {
-      return require('./img/zhu.jpg')
+      return require('./img/zhu.png')
     }
   }
 }

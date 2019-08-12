@@ -72,14 +72,19 @@
           </flexbox-item>
         </flexbox>
       </div>
-      <div style="margin-top:1rem">
+      <div style="margin-top:1rem; ">
         人气TOP榜
-        <img src alt />
+        <div class="res">
+<img src='./picture/位图(1).png' />
+        <img src='./picture/第一.png' class="abs" >
+        </div>
+        
       </div>
       <div class="div4">
         <flexbox :gutter="0" wrap="wrap">
-          <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key">
+          <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" class="res">
             <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"></pai-lie>
+             <img :src="item.img1" class="abs">
           </flexbox-item>
         </flexbox>
       </div>
@@ -99,7 +104,7 @@
           </flexbox-item>
         </flexbox>
         <flexbox :gutter="0" wrap="wrap">
-          <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key">
+          <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" >
             <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"></pai-lie>
           </flexbox-item>
         </flexbox>
@@ -165,15 +170,15 @@ import searchFor from './demo1/search'
 const baseList = [
   {
     url: 'javascript:',
-    img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vvsr72j20p00gogo2.jpg'
+    img: require('./位图.png')
   },
   {
     url: 'javascript:',
-    img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw1k2wj20p00goq7n.jpg'
+    img: require('./位图.png')
   },
   {
     url: 'javascript:',
-    img: 'https://static.vux.li/demo/5.jpg',
+    img: require('./位图.png'),
     fallbackImg:
       'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw50iwj20ff0aaaci.jpg' // 它将在 img 加载失败时显示，注意的是 fallbackImg 可能会在 img 加载成功时也进行了加载，只是不会显示（取决于浏览器实现）
   }
@@ -269,13 +274,13 @@ export default {
         }
       ],
       list: [
-        { name: '1', img: '', cost: '1' },
-        { name: '1', img: '', cost: '2' }
+        { name: '1', img: require('./picture/xidi.png'), cost: '1' },
+        { name: '1', img: require('./picture/xidi.png'), cost: '2' }
       ],
       list1: [
-        { name: '1', img: '', cost: '1' },
-        { name: '1', img: '', cost: '2' },
-        { name: '1', img: '', cost: '3' }
+        { name: '1', img: require('./picture/xidi.png'), cost: '1', img1: require('./picture/第二.png') },
+        { name: '1', img: require('./picture/xidi.png'), cost: '2', img1: require('./picture/第三.png') },
+        { name: '1', img: require('./picture/xidi.png'), cost: '3', img1: '' }
       ],
       listicon: [
         { title: '安全健康', icon: '安全' },
@@ -357,9 +362,10 @@ export default {
     background-color: white;
     margin-top: 1rem;
     .xidi {
-      width: calc(50% - 1.8rem);
-      border: 0.1rem solid #ececec;
-      margin: 0 0.8rem;
+      width: calc(50% - 1.2rem);
+      border: 0.0625rem solid #ececec;
+      margin-left:0.8rem;
+      height: 10.6rem;
     }
   }
   .div2 {
@@ -413,5 +419,14 @@ export default {
     background-image: linear-gradient(to right, #ff214c, #ff4f71);
     border-radius: 1.125rem;
   }
+  .res{
+    position: relative;
+    .abs{
+      position:absolute;
+      left: 0rem;
+      top:0rem
+    }
+  }
+  
 }
 </style>
