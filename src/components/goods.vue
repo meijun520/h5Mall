@@ -58,8 +58,12 @@ export default {
 .bc{
   background-color: white;
   .ms{
-    padding: 0.69rem 1rem;
+    padding: 0.375rem 1rem;
 
+  }
+  .img{
+    width: 9.1875rem;
+    height: 6.625rem;
   }
 
   
