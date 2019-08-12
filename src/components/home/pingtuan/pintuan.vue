@@ -1,12 +1,6 @@
 <template>
   <div class="pintuan">
-    <div class="header-in">
-      <!--<div class="left-arrow"></div>-->
-      <div style="float:left; position:relative; top:2.5rem; left:0.75rem;">
-        <x-icon type="ios-arrow-left" size="24" @click="getback()"></x-icon>
-      </div>
-      <p>拼团商城</p>
-    </div>
+    <tabGroup :title="title" :icon="src"></tabGroup>
     <div class="dapai">
       <div>
         <span>大牌拼团</span>
@@ -36,40 +30,29 @@
 </template>
 <script>
 import {} from 'vux'
+import tabGroup from '@/components/group/tab'
 export default {
   data () {
     return {
-      cost: 3
+      cost: 3,
+      title: '拼团商城'
     }
   },
-  components: {},
+  components: {
+    tabGroup: tabGroup
+  },
   methods: {
     getback () {
       history.go(-1)
     },
     pintuangoods () {
-      this.$router.push('./pintuangoods')
+      this.$router.push('./goodsneir')
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .pintuan {
-  .header-in {
-    height: 4.93rem;
-    background-color: #ffffff;
-    text-align: center;
-    border-bottom: 0.0625rem solid #e5e5e5;
-    p {
-      color: #000000;
-      font-size: 1rem;
-      line-height: 1.375rem;
-      position: relative;
-      top: 2.625rem;
-      left: 9rem;
-      width: 7rem;
-    }
-  }
   .dapai {
     padding: 0.625rem;
     margin: 0.625rem;
@@ -94,6 +77,7 @@ export default {
         border-radius: 1.125rem;
         border: none;
         box-shadow: 0px 0.125rem 0.25rem 0px rgba(255, 175, 189, 1);
+        color: #ffffff;
       }
     }
     .clear {

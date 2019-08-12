@@ -94,7 +94,7 @@ export default {
 }
 </script>
 
-<style  lang="scss" scoped>
+<style  lang="scss" >
 .detial { 
   width: calc(100vw - 4rem + 0.0625rem);
   margin-left: 1rem;
@@ -106,6 +106,7 @@ export default {
   padding-top: 1.8rem;
   float: left;
 }
+
   // .check-box {
   //   //height: 100%;
   //   line-height: 6rem;
@@ -136,18 +137,30 @@ export default {
       border: 0.1rem solid red;
       float: left;
     }
+    .vux-number-selector svg {
+      fill: #333333;
+    }
     .vux-inline-x-number {
       position: absolute;
       right: 1rem;
       bottom: 2rem;
 
     }
-    .vux-number-selector-sub {
-      border-radius: 2rem 0rem 0rem 2rem;
-    }
-    .vux-number-selector-plus {
-      border-radius: 0px 2rem 2rem 0px;
-    }
+   .vux-number-selector{
+     height: 1.375rem;
+     line-height:1.375rem;
+         padding: 1px 3px 1px 3px;
+   }
+   .vux-number-input{
+        height: 1.375rem;
+     line-height:1.375rem;
+     font-size: 0.82rem;
+         padding: 1px 3px 1px 3px;
+         width: 2.5rem!important;
+   }
   }
+}
+  .vux-check-icon > .weui-icon-success:before, .vux-check-icon > .weui-icon-success-circle:before{
+  color: #FF214C;
 }
 </style>

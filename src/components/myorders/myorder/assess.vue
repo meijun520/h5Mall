@@ -1,19 +1,6 @@
 <template>
   <div class="color">
-    <div class="header-in">
-      <!--<div class="left-arrow"></div>-->
-      <div style="float:left; position:relative; top:2.5rem; left:0.75rem;">
-        <x-icon type="ios-arrow-left" size="24" @click="getback()"></x-icon>
-      </div>
-      <p>
-        发表评价
-        <span style="position:relative;left:7rem;color:#FF214C">提交</span>
-      </p>
-      <div>
-          <alert v-model="show" :title="title"  @on-hide="onhide()"> {{ describle }}</alert>
-      </div>
-    </div>
-
+<tabGroup :title="title" :ab="ab"></tabGroup>
     <div class="fen">
       <span>评分</span>
       <rater :star="'★'" active-color="#FF9900" style="float:right;line-height:3.4rem"></rater>
@@ -29,7 +16,7 @@
 
 <script>
 import { XHeader, Tab, TabItem, XProgress, Rater, Alert, XTextarea, Group } from 'vux'
-
+import tabGroup from '@/components/group/tab'
 export default {
   components: {
     XHeader,
@@ -39,7 +26,8 @@ export default {
     Rater,
     Alert,
     XTextarea,
-    Group
+    Group,
+    tabGroup: tabGroup
   },
   data () {
     return {
@@ -47,7 +35,10 @@ export default {
       title: '确认要退出评价?',
       describle: '退出后编辑过的内容将不保存',
       show: false,
-      placeholder: '输入评价内容'
+      placeholder: '输入评价内容',
+      title1: '发表评价',
+      ab: '提交'
+
     }
   },
   props: {},
@@ -66,21 +57,9 @@ export default {
 .color {
   background-color: #ffffff;
   height: 100vh;
-  .header-in {
-    height: 4.93rem;
-    background-color: #ffffff;
-    text-align: center;
-    border-bottom: 0.0625rem solid #e5e5e5;
-    p {
-      color: #000000;
-      font-size: 1rem;
-      line-height: 1.375rem;
-      position: relative;
-      top: 2.625rem;
-      left: 9rem;
-      width: 8rem;
-    }
-  }
+.tab .img2{
+  color:#FF214C;
+}
   .left-arrow {
     position: absolute;
     width: 30px;

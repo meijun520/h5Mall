@@ -1,18 +1,21 @@
 <template>
   <div class="adress">
     <tabGroup :title="title"></tabGroup>
-    <group class="address1" :class="a===false?'active':''">
-      <div>朱晏成&nbsp;&nbsp;133012241224</div>
-      <div>
-        <span class="moren">默认</span>
-        <span style="color:#666666; font-size:0.8rem">中国,上海,长宁区,福泉路200号快递柜</span>
+    <div class="address1" :class="a===false?'active':''">
+      <div class="fl">
+        <div>朱晏成&nbsp;&nbsp;133012241224</div>
+        <div>
+          <span class="moren">默认</span>
+          <span style="color:#666666; font-size:0.8rem">中国,上海,长宁区,福泉路200号快递柜</span>
+        </div>
       </div>
-      <div class="bianji" @click="bianji()" v-if="a">编辑</div>
+
+      <span class="bianji" @click="bianji()" v-if="a">编辑</span>
       <div class="bianji" v-else>
         <div class="blue" @click="tochangeadress()">编辑</div>
         <div class="red">删除</div>
       </div>
-    </group>
+    </div>
     <button class="button" @click="newchange()">新增收货地址</button>
   </div>
 </template>
@@ -52,7 +55,8 @@ export default {
 .adress {
   .address1 {
     background: #ffffff;
-    padding: 0.85rem 0.85rem 0 0.85rem;
+    padding: 0.85rem;
+    height: 4.68rem;
     .moren {
       width: 2rem;
       height: 1.25rem;
@@ -63,11 +67,13 @@ export default {
       padding: 0.25rem;
       font-size: 0.75rem;
     }
+    .fl {
+      float: left;
+    }
     .bianji {
-      text-align: center;
       float: right;
-      position: relative;
-      bottom: 1.5rem;
+      line-height: 4.68rem;
+      text-align: center;
     }
     .blue {
       float: left;
@@ -85,7 +91,13 @@ export default {
       background: #ff8721;
       line-height: 4.7rem;
     }
+  
   }
+     .active {
+    margin-left: -5rem;
+    padding: 0rem;
+  }
+ 
   .button {
     width: 21.4rem;
     height: 3.125rem;

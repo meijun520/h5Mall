@@ -9,9 +9,8 @@
     ></swiper>
     <div class="div">
       <div class="div1">
-        <span>拼团价 ¥340.00</span>
-        <span style="color:#FFCDD6">单买价 ¥540.00</span>
-        <span style="float:right">已拼450件</span>
+        <span style="color:#FFCDD6"> ¥540.00</span>
+        <span style="float:right">距结束 12 : 43 : 45</span>
       </div>
       <div class="div2">
         <p>妃立宝洗衣包青春版50g</p>
@@ -25,24 +24,31 @@
           <br />纳米洗衣宝 孕婴可用
         </div>
         <div>
-          <span style="color:#DA0217">拼团价¥50</span>
+          <span style="color:#DA0217">会员价 ¥ 50</span>
 
           <span class="word" style="text-decoration:line-through">¥67</span>
         </div>
       </div>
       <div class="div3">
         <div class="item-head">
-          <span>拼团玩法</span>
+          <span>优惠</span>
           <p class="fr word">
-            详情规则
+            使用优惠券可减去50元
             <img :src="moreicon" />
           </p>
         </div>
-        <step background-color="white">
-          <step-item title="开团/参团"></step-item>
-          <step-item title="邀请好友"></step-item>
-          <step-item title="满员发货，不满退款"></step-item>
-        </step>
+        <div class="item-head">
+          <span>促销</span>
+          <p class="fr word">
+            <span style="color:#FF4569; background:#FFEBEB;">
+满减
+            </span>
+            
+            满300减30
+            <img :src="moreicon" />
+          </p>
+        </div>
+        
         <div style="text-align:center;">
           <span style="margin-right:1rem;">
             <img src="./打勾.png" alt />
@@ -60,33 +66,14 @@
       </div>
       <div class="div4">
         <div class="item-head">
-          <span style="color:#FF1B46">【新人团】</span>
-          <span class="word">以下小伙伴正在发起拼团</span>
-          <p class="fr word">南通市***拼团成功</p>
+          <span>商品规格</span>
+          <p class="fr word">
+            选择尺码、颜色
+            <img :src="moreicon" />
+          </p>
         </div>
 
-        <div class="div4a">
-          <img src style="width:3rem; height:3rem; float:left" />
-          <div style="float:left;margin-left:0.5rem;">
-            <div>李修平</div>
-            <div class="word">
-              还差
-              <span style="#ff486b">1</span>人，剩余00:12:65结束
-            </div>
-          </div>
-          <button class="button">去参团</button>
-        </div>
-        <div class="div4a">
-          <img src style="width:3rem; height:3rem; float:left" />
-          <div style="float:left;margin-left:0.5rem;">
-            <div>李修平</div>
-            <div class="word">
-              还差
-              <span style="#ff486b">1</span>人，剩余00:12:65结束
-            </div>
-          </div>
-          <button class="button">去参团</button>
-        </div>
+       
       </div>
       <div class="div5">
         <div class="item-head">
@@ -128,14 +115,22 @@
         " style="height:29.7rem;" />
       </div>
       <div class="div7">
-        <div class="fl word">
-          <img src="./形状.png" ><br/>
-        <span>
-         收藏 
-        </span>
+        <div class="word" style="float:left;width:20%;position: relative;
+    top: 0.4rem;">
+          <span >
+          <img src="./形状.png" ><br/>  
+            收藏
+          </span>
           </div>
-        <div class="fl" style="font-size:0.75rem;">¥380<br/>单独购买</div>
-        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;">¥258<br/>2人团</div>
+           <div class="word" style="float:left;width:20%; position: relative;
+    top: 0.4rem;">
+          <span >
+          <img src="./首页.png" ><br/>  
+            首页
+          </span>
+          </div>
+        <div class="fl" style="font-size:0.75rem;background:#FF8721; color:#FFFFFF; ">¥380<br/>加入购物车</div>
+        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;">立即购买</div>
       </div>
     </div>
   </div>
@@ -169,7 +164,7 @@ export default {
     return {
       title: '妃立宝洗衣宝青春宝',
       demo02_list: list,
-      moreicon: require('./返回.png')
+      moreicon: require('./返回2.png')
     }
   },
   props: {},
@@ -230,20 +225,6 @@ export default {
     }
     .div4 {
       background-color: #ffffff;
-      .div4a {
-        padding: 0.69rem 0 1rem 0.69rem;
-        border-bottom: 1px solid #f4f4f4;
-
-        .button {
-          margin: 0.8rem 0rem 0rem 3.5rem;
-          height: 1.8rem;
-          width: 4.25rem;
-          border: 1px solid #ff224b;
-          color: #ff224b;
-          border-radius: 1.125rem;
-          background: #ffff;
-        }
-      }
     }
     .div5 {
       background-color: #ffffff;
@@ -273,8 +254,8 @@ export default {
 
       .fl {
         float: left;
-        width: calc(100% / 3);
-        padding:0.5rem 0rem;
+        width: 30%;
+       line-height: 3.125rem;
        
       }
     }

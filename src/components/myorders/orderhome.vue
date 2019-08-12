@@ -1,17 +1,21 @@
 <template>
   <div class="order">
     <div class="div1">
-      <div class="user">
-        <div style="float:left" @click="topersonalData(a)">
+    
+        <div  @click="topersonalData(a)" class="user">
           <img src="" >
-             喵喵啊啊
-        </div>
+          <span>
+         喵喵啊啊
+          </span> 
+           <img src="./设置.png" style="float:right; margin-left:1.18rem;" @click="toset()"/>
+        <img src="./消息.png" style="float:right;" @click="tomassage()"/>
+       
+            
+  
      
-        <img src="./消息.png" style="margin-left: 10rem;" @click="tomassage()"/>
-        <img src="./设置.png" style="padding-left:1rem" @click="toset()"/>
+       
       </div>
-      <div></div>
-      <div>
+      <div style="padding:0 2.31rem;">
         <div v-for="(item,key) in list" :key="key" class="massage">
           <p>{{item.shu}}</p>
 
@@ -153,20 +157,16 @@ export default {
     background-image: linear-gradient(to right, #ff718d, #ff254f);
     color: #ffffff;
     .user {
-      position: relative;
-      top: 2.5rem;
-      left: 2.3rem;
+    padding:0 1.25rem;
+   padding-top: 3.37rem;
       // img {
       //   float: right;
       // }
     }
     .massage {
       float: left;
-      margin: 0 1.56rem;
-      padding-bottom: 4.25rem;
-      position: relative;
-      top: 3rem;
-      left: 0.8rem;
+      width: calc(100%/4);
+     
     }
   }
   .div2 {

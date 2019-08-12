@@ -1,12 +1,6 @@
 <template>
   <div>
-    <div class="header-in">
-      <!--<div class="left-arrow"></div>-->
-      <div style="float:left; position:relative; top:2.5rem; left:0.75rem;">
-        <x-icon type="ios-arrow-left" size="24" @click="getback()"></x-icon>
-      </div>
-      <p>订单详情</p>
-    </div>
+    <tabGroup :title="title" :ab="ab"></tabGroup>
     <div class="red"></div>
     <div style="padding:0 0.75rem;">
       <div class="title">
@@ -79,24 +73,16 @@
     </div>
     <div class="floot">
       <div style="float:right; margin: 0.5rem">
-   <button class="blackb">去付款</button>
-      <button class="redb" @click="toassess()">去评价</button>
+        <button class="blackb">去付款</button>
+        <button class="redb" @click="toassess()">去评价</button>
       </div>
-   
     </div>
   </div>
 </template>
 
 <script>
-import {
-  XHeader,
-  Tab,
-  TabItem,
-  FormPreview,
-  Grid,
-  GridItem,
-  XButton
-} from 'vux'
+import tabGroup from '@/components/group/tab'
+import { XHeader, Tab, TabItem, FormPreview, Grid, GridItem, XButton } from 'vux'
 export default {
   components: {
     XHeader,
@@ -105,13 +91,15 @@ export default {
     FormPreview,
     Grid,
     GridItem,
-    XButton
+    XButton,
+    tabGroup: tabGroup
   },
   data () {
     return {
       zhuantai: '订单状态',
       time: '订单剩余时间',
-      wuliu: true
+      wuliu: true,
+      title: '订单详情'
     }
   },
   props: {},
@@ -129,21 +117,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-in {
-  height: 4.93rem;
-  background-color: #ffffff;
-  text-align: center;
-  border-bottom: 0.0625rem solid #e5e5e5;
-  p {
-    color: #000000;
-    font-size: 1rem;
-    line-height: 1.375rem;
-    position: relative;
-    top: 2.625rem;
-    left: 9rem;
-    width: 7rem;
-  }
-}
 .red {
   height: 8.625rem;
   background-image: linear-gradient(to right, #ff214c, #ff7791);
@@ -211,10 +184,10 @@ export default {
   .redb {
     width: 5rem;
     height: 1.75rem;
-    color: #FF214C;
+    color: #ff214c;
     background: rgba(255, 255, 255, 1);
     border-radius: 0.93rem;
-    border: 0.0625rem solid #FF214C
+    border: 0.0625rem solid #ff214c;
   }
 }
 </style>

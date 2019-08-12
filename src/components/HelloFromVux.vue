@@ -13,7 +13,6 @@
     </div>
      <div v-show="showIndex===3">
       <order-home></order-home>
-      
     </div>
     <tabbar @on-index-change="showchange" style="position:fixed">
       <tabbar-item >

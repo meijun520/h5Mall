@@ -1,12 +1,6 @@
 <template>
   <div class="pintuan">
-    <div class="header-in">
-      <!--<div class="left-arrow"></div>-->
-      <div style="float:left; position:relative; top:2.5rem; left:0.75rem;">
-        <x-icon type="ios-arrow-left" size="24" @click="getback()"></x-icon>
-      </div>
-      <p>限时抢购</p>
-    </div>
+ <tabGroup :title="title" :icon="src"></tabGroup>
     <div class="time">
       <div
         v-for="(item,key) in list"
@@ -46,12 +40,14 @@
 </template>
 <script>
 import { XProgress } from 'vux'
+import tabGroup from '@/components/group/tab'
 export default {
   data () {
     return {
       cost: 3,
       shu: {},
       percent2: 20,
+      title: '限时抢购',
       list: [
         {
           time: '19:00',
@@ -76,7 +72,9 @@ export default {
       ]
     }
   },
-  components: { XProgress },
+  components: {
+    XProgress,
+    tabGroup: tabGroup },
   methods: {
     getback () {
       history.go(-1)
@@ -89,21 +87,6 @@ export default {
 </script>
 <style lang="scss">
 .pintuan {
-  .header-in {
-    height: 4.93rem;
-    background-color: #ffffff;
-    text-align: center;
-    border-bottom: 0.0625rem solid #e5e5e5;
-    p {
-      color: #000000;
-      font-size: 1rem;
-      line-height: 1.375rem;
-      position: relative;
-      top: 2.625rem;
-      left: 9rem;
-      width: 7rem;
-    }
-  }
   .dapai {
     padding: 0.625rem;
     margin: 0.625rem;
@@ -157,7 +140,7 @@ export default {
     border-bottom: 0.0625rem solid #e5e5e5;
     .qiang {
       float: left;
-      width: 5.17rem;
+      width:calc(100%/5);
       height: 3rem;
       text-align: center;
     }

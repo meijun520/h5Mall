@@ -1,13 +1,14 @@
 <template>
   <div class="pin">
     <div class="white">
-      <div class="red">
-        <div class="header">
-          <x-icon type="ios-arrow-back" size="30" @click.native="toback()"></x-icon>
-          <span>拼团详情</span>
-        </div>
+      <div class="red"> 
       </div>
     </div>
+    <div class="header">
+          <img src='./返回1.png' @click.native="toback()" style=" float:left;
+    padding-left: 0.85rem;">
+          <span>拼团详情</span>
+        </div>
     <div class="padding">
       <goods-detial class="detial"></goods-detial>
       <div style=" margin-top:0.5rem">
@@ -67,19 +68,24 @@ export default {
 <style lang="scss" scoped>
 .pin {
   background-color: #ffffff!important;
+  .white {
+  margin-top: -21rem;
+  .red {
+    background-image: linear-gradient(to bottom, #ff718d, #ff254f);
+    height: 32rem;
+    width: 32rem;
+    border-radius: 32rem;
+    position: absolute;
+    margin-left: 50vw;
+    left: -16rem;
+    margin-top: 2rem;
+  }
+}
   .header {
-    margin-top: 19.5rem;
-    margin-left: -19rem;
-    color: #ffffff;
-    span {
-      position: relative;
-      top: -0.5rem;
-      left: 8rem;
-      font-size: 1rem;
-    }
-    .vux-x-icon {
-      fill: #ffffff;
-    }
+        position: relative;
+    top: 24rem;
+    text-align: center;
+    color: #FFFFFF;
   }
   .padding {
     padding: 0.75rem;

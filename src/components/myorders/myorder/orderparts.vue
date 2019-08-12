@@ -28,7 +28,7 @@
     <div class="div4" style="float:right">
       <x-button mini disabled >查看物流</x-button>
       <x-button mini type="warn">去付款</x-button>
-      <x-button mini type="warn" @click.native="toassess()">去评价</x-button>
+      <x-button mini type="warn" @click.native="toassess()" >去评价</x-button>
     </div>
   </div>
 </template>
@@ -57,7 +57,6 @@ export default {
 <style lang="scss" scoped>
 .div {
   padding: 1rem;
-  width: 24rem;
   height: 14rem;
 
   background-color: white;

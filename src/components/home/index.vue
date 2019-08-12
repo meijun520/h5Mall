@@ -384,14 +384,15 @@ export default {
   .div6 {
     .qiang {
       float: left;
-      margin: 1rem;
+     width: calc(100%/4);
+     text-align: center;
     }
     .active {
       color: #ff2953;
       .border {
         border: 0.1rem solid #ff2953;
-        width: 1rem;
-        margin-left: 1rem;
+          width: calc(100%/4);
+        margin: auto;
       }
     }
   }

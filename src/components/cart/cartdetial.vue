@@ -4,8 +4,12 @@
       购物车
       <p style="float:right" @click="bianji()">{{bian}}</p>
     </div>
-    <div class="start">限时优惠
-      <img src="./header.png" style="margin-left:18.75rem">
+    <div class="start">
+     
+限时优惠
+ <img src="./header.png" style="float:right; margin-top: 0.6rem;">
+      
+     
     </div>
     <div class="cartdetial">
       <detial-list

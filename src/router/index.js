@@ -27,6 +27,7 @@ import aboutus from '@/components/myorders/setting/aboutus'
 import becomemar from '@/components/myorders/coupons/becomemar'
 import fukuan from '@/components/cart/dingdan/fukuan'
 import payfinish from '@/components/cart/dingdan/payfinish'
+import goodsneir from '@/components/group/goodsneir'
 
 Vue.use(Router)
 
@@ -166,6 +167,11 @@ export default new Router({
       path: '/payfinish',
       name: 'payfinish',
       component: payfinish
+    },
+    {
+      path: '/goodsneir',
+      name: 'goodsneir',
+      component: goodsneir
     }
 
   ]

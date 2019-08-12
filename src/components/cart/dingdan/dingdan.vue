@@ -28,7 +28,8 @@
     <span>
  ¥50
     </span>
-  <an-niu :title="queren" style="position:relative; left:12rem;" @click.native="fukuan()"></an-niu>
+  <an-niu :title="queren" style="float:right;margin-top: 0.5rem;
+    margin-right: 1.5rem;" @click.native="fukuan()"></an-niu>
   </div>
 
   </div>

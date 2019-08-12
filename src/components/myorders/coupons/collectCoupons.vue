@@ -1,15 +1,6 @@
 <template>
   <div>
-    <div class="header-in">
-      <!--<div class="left-arrow"></div>-->
-      <div style="float:left; position:relative; top:2.5rem; left:0.75rem;" >  
-       <x-icon type="ios-arrow-left" size="24" @click="getback()"></x-icon>
-       </div>
-      <p>
-        领券中心
-        <span style="position:relative;left:5rem">我的优惠券</span>
-      </p>
-    </div>
+     <tabGroup :title="title" :ab="ab"></tabGroup>
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
     </tab>
@@ -42,19 +33,22 @@
 
 <script>
 import { XHeader, Tab, TabItem, XProgress } from 'vux'
-
+import tabGroup from '@/components/group/tab'
 export default {
   components: {
     XHeader,
     Tab,
     TabItem,
-    XProgress
+    XProgress,
+    tabGroup: tabGroup
   },
   data () {
     return {
       percent2: 50,
       list: ['全部', '母婴 ', ' 美妆', '洗护 ', '洗衣液 '],
-      n: 0
+      n: 0,
+      title: '领券中心',
+      ab: '我的优惠券'
     }
   },
   props: {},
@@ -67,21 +61,6 @@ export default {
 </script>
 
 <style lang="scss" >
-.header-in {
-  height: 4.93rem;
-  background-color: #ffffff;
-  text-align: center;
-  border-bottom: 0.0625rem solid #e5e5e5;
-  p {
-    color: #000000;
-    font-size: 1rem;
-    line-height: 1.375rem;
-    position: relative;
-   top: 2.625rem;
-   left:9rem;
-   width: 11rem
-  }
-}
 .left-arrow {
   position: absolute;
   width: 30px;
