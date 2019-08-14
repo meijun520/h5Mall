@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class="fenlei">
     <search-for :neir="neir"></search-for>
-
     <div class="div">
       <div class="fl">
         <div
@@ -92,13 +91,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fenlei{
+.search {
+    margin-top: 1.69rem;
+}
 .div {
-  margin-top: 3rem;
+  margin-top: 0.2rem;
   padding-right: 1rem;
   border-top: 0.0625rem solid #F7F5F5;
   .fl {
     width: 8rem;
-    height: 40rem;
+    height: 43rem;
     background-color: #F7F5F5;
     text-align: center;
     float: left;
@@ -128,4 +131,6 @@ export default {
     margin-bottom: 2rem;
   }
 }
+}
+
 </style>

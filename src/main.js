@@ -8,6 +8,7 @@ import App from './App'
 import {Tabbar, TabbarItem} from 'vux'
 // import '@/style/index.scss'
 import router from './router/index'
+import store from './store/store'
 Vue.use(VueRouter)
 Vue.component(Tabbar.name, Tabbar)
 Vue.component(TabbarItem.name, TabbarItem)
@@ -23,5 +24,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app-box')

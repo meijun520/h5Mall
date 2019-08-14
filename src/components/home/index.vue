@@ -1,28 +1,24 @@
 <template>
-  <div style=" background-color:#F7F5F5; height:100vh">
-    <div class="white">
-      <div class="red">
-        <img src="./形状.png" style="margin-top:20.7rem; margin-left:25.5rem;" />
-      </div>
+  <div  class="home">
+    <div >
+      <!-- <div class="red">
+        <img src="./形状.png" style="margin-top:20.7rem; margin-left:26rem;" />
+      </div> -->
+      <img src="@/assets/home/形状结合.png" style="" />
     </div>
-    <div style>
+    <div class="shous">
       <search-for
         @click.native="tosearch()"
         :neir="neir"
-        style="position: absolute;
-    top: 1rem; left:-2rem; "
+        style="float:left;"
       ></search-for>
+          <img src="./形状.png" style="" />
     </div>
+  
 
     <div class="home-index">
       <div>
-        <swiper
-          loop
-          auto
-          :list="demo06_list"
-          :index="demo06_index"
-          @on-index-change="demo06_onIndexChange"
-        ></swiper>
+        <swiper :list="demo06_list" auto style="width:100%;margin:0 auto;" height="180px"  dots-position="center"></swiper>
       </div>
       <div class="div1">
         <div class="item-head">
@@ -328,26 +324,31 @@ export default {
 </script>
 
 <style  lang="scss" >
-.white {
-  margin-top: -21rem;
-  .red {
-    background-image: linear-gradient(to bottom, #ff718d, #ff254f);
+// .white {
+//   margin-top: -21rem;
+//   .red {
+//     background-image: linear-gradient(to bottom, #ff718d, #ff254f);
 
-    height: 32rem;
-    width: 32rem;
-    border-radius: 32rem;
-    position: absolute;
-    margin-left: 50vw;
-    left: -16rem;
-    margin-top: 2rem;
+//     height: 32rem;
+//     width: 32rem;
+//     border-radius: 32rem;
+//     position: absolute;
+//     margin-left: 50vw;
+//     left: -16rem;
+//     margin-top: 2rem;
+//   }
+// }
+.home{
+  background-color: #F7F5F5;
+  .shous{
+       margin-top: -9rem;
   }
-}
 .home-index {
   padding: 0.75rem;
-  overflow-y: auto;
-  overflow: auto;
-  margin-top: -12rem;
-  padding-top: 25.5rem;
+  // overflow-y: auto;
+  // overflow: auto;
+  // margin-top: -12rem;
+  // padding-top: 25.5rem;
   .right {
     float: right;
     color: #999990;
@@ -367,10 +368,7 @@ export default {
       margin-left:0.8rem;
       height: 10.6rem;
     }
-    .img img{
-        width: 9.1875rem;
-    height: 6.625rem;
-    }
+   
   }
   .div2 {
     background-color: white;
@@ -433,4 +431,6 @@ export default {
   }
   
 }
+}
+
 </style>

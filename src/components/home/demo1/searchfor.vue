@@ -56,9 +56,7 @@ export default {
   height: 100vh;
   .searchfor{
     position: static;
-    float: left;
     padding-top: 2rem;
-    margin-left: -1rem;
   }
   .border{
     clear: both;

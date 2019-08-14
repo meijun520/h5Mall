@@ -33,8 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 .search{
-  position: fixed;
-  width:calc(100vw - 1rem);
+  width:81vw;
   top:0;
   padding:0.5rem;
   z-index: 1000;
@@ -52,7 +51,7 @@ img{
 }
 .input-kw{
   background-color: #F7F5F5;
-  width: 81.5%;
+  width: 100%;
   height: 2rem;
   border-radius:1rem;
   border: 0;
