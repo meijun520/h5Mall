@@ -2,7 +2,7 @@
   <div style=" background-color:#F7F5F5; height:100vh">
     <div class="white">
       <div class="red">
-        <img src="./形状.png" style="margin-top:20.7rem; margin-left:26rem;" />
+        <img src="./形状.png" style="margin-top:20.7rem; margin-left:25.5rem;" />
       </div>
     </div>
     <div style>
@@ -10,7 +10,7 @@
         @click.native="tosearch()"
         :neir="neir"
         style="position: absolute;
-    top: 1rem "
+    top: 1rem; left:-2rem; "
       ></search-for>
     </div>
 
@@ -366,6 +366,10 @@ export default {
       border: 0.0625rem solid #ececec;
       margin-left:0.8rem;
       height: 10.6rem;
+    }
+    .img img{
+        width: 9.1875rem;
+    height: 6.625rem;
     }
   }
   .div2 {

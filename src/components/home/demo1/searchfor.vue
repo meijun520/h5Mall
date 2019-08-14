@@ -2,7 +2,9 @@
 <div class="search1">
 <search-for class="searchfor"  :neir="neir" >
 </search-for>
-<div style="padding-top:2.1rem; padding-left: 20rem;">
+<div style="float: right;
+    margin-top: -2.3rem;
+    margin-right: 0.5rem;">
 取消
 </div>
 
@@ -56,8 +58,7 @@ export default {
     position: static;
     float: left;
     padding-top: 2rem;
-    padding-left: 0.875rem;
-    width: 18.7rem;
+    margin-left: -1rem;
   }
   .border{
     clear: both;

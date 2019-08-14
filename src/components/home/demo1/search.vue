@@ -52,7 +52,7 @@ img{
 }
 .input-kw{
   background-color: #F7F5F5;
-  width: 20rem;
+  width: 81.5%;
   height: 2rem;
   border-radius:1rem;
   border: 0;

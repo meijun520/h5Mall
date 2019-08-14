@@ -60,13 +60,7 @@ export default {
   .ms{
     padding: 0.375rem 1rem;
 
-  }
-  .img{
-    width: 9.1875rem;
-    height: 6.625rem;
-  }
-
-  
+  } 
 
 }
 
