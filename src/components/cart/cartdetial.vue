@@ -15,14 +15,14 @@
       <detial-list
         v-for="(item,key) in list1"
         :key="key"
-        :title="item.name"
-        :imgurl="item.img"
-        :cost="item.cost"
-        :count="item.count"
-        :check="item.check"
-        :attribute="item.attribute"
+        :title="item.productName"
+        :imgurl="item.productIcon"
+        :cost="item.salePrice"
+        :count="item.number"
+        :check="item.activated"
+        :attribute="item.productProfile"
         @countChange="a=>{item.count=a}"
-        @checkChange="a=>{item.check=a}"
+        @checkChange="a=>{item.activated=a}"
       ></detial-list>
       <!-- <div class="cai">
         <div class="icon">
@@ -43,7 +43,7 @@
       </div> -->
       <you-like></you-like>
       <div class="div3" v-if='change'>
-          <check-icon :value.sync="allcheck" class="icon" @click.native="quanxuan"></check-icon>
+          <check-icon :value.sync="allcheck" class="icon" @click.native="quanxuan" @icon-success-color="color"></check-icon>
           <span>全选</span>
         <div class="jiesuan">
             总计：¥{{zongji}}
@@ -66,6 +66,7 @@ import paiLie from '@/components/goods'
 import detialList from './detiallist'
 import { Flexbox, FlexboxItem, CheckIcon, XButton } from 'vux'
 import youLike from '@/components/group/youlike'
+// import { mapGetters, mapActions } from 'vuex'
 export default {
   components: {
     paiLie: paiLie,
@@ -78,35 +79,37 @@ export default {
   },
   data () {
     return {
-      list1: [
-        { name: '1',
-          img: '',
-          cost: 1,
-          count: 2,
-          check: false,
-          attribute: 'ok'},
-        { name: '1',
-          img: '',
-          cost: 2,
-          count: 5,
-          check: false,
-          attribute: 'ok'}
-      ],
+      // list1: [
+      //   { name: '1',
+      //     img: '',
+      //     cost: 1,
+      //     count: 2,
+      //     check: false,
+      //     attribute: 'ok'},
+      //   { name: '1',
+      //     img: '',
+      //     cost: 2,
+      //     count: 5,
+      //     check: false,
+      //     attribute: 'ok'}
+      // ],
+      list1: [],
       allcheck: false,
       bian: '编辑',
       change: true,
-      src: require('./购物车.png')
+      src: require('./购物车.png'),
+      color: '#FF214C'
     }
   },
   methods: {
     quanxuan () {
       if (this.allcheck === false) {
         for (let a = 0; a < this.list1.length; a++) {
-          this.list1[a].check = false
+          this.list1[a].activated = false
         }
       } else {
         for (let a = 0; a < this.list1.length; a++) {
-          this.list1[a].check = true
+          this.list1[a].activated = true
         }
       }
     },
@@ -120,18 +123,25 @@ export default {
       }
     },
     shanchu () {
-      console.log(1)
+      this.$http.post('').then(res => {
+
+      })
     },
     todingdan () {
       this.$router.push('./dingdan')
+    },
+    getcartlist () {
+      this.$http.get('ferrobag-server/shoppingCart/getShoppingCartList', {params: {userId: 258}}).then(res => {
+        this.list1 = res.data.data
+      })
     }
   },
   computed: {
     zongji () {
       let aa = 0
       for (let a = 0; a < this.list1.length; a++) {
-        if (this.list1[a].check === true) {
-          aa += this.list1[a].cost * this.list1[a].count
+        if (this.list1[a].activated === true) {
+          aa += this.list1[a].salePrice * this.list1[a].number
         }
       }
       return aa
@@ -139,17 +149,25 @@ export default {
     shul () {
       let ab = 0
       for (let a = 0; a < this.list1.length; a++) {
-        if (this.list1[a].check === true) {
+        if (this.list1[a].activated === true) {
           ab++
         }
       }
       return ab
     }
+    // ...mapGetters(['list1']),
+    // ...mapActions(['todingdan()'])
+  },
+  mounted () {
+    this.getcartlist()
   }
 }
 </script>
 
 <style  lang="scss" >
+.vux-check-icon > .weui-icon-success:before, .vux-check-icon > .weui-icon-success-circle:before {
+  color: #FF214C!important;
+}
 * {
   touch-action: pan-y;
 }

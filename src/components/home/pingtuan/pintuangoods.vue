@@ -91,7 +91,7 @@
       <div class="div5">
         <div class="item-head">
           <span>宝贝评价（456）</span>
-          <p class="fr word">
+          <p class="fr word" @click="topingjia()">
             查看全部
             <img :src="moreicon" alt />
           </p>
@@ -178,7 +178,11 @@ export default {
       return require('./分享1.png')
     }
   },
-  methods: {}
+  methods: {
+    topingjia () {
+      this.$router.push('./pingjia')
+    }
+  }
 }
 </script>
 

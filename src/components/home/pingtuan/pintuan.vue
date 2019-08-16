@@ -1,6 +1,6 @@
 <template>
   <div class="pintuan">
-    <tabGroup :title="title" :icon="src"></tabGroup>
+    <tabGroup :title="title" ></tabGroup>
     <div class="dapai">
       <div>
         <span>大牌拼团</span>
@@ -9,18 +9,18 @@
           <font color="#FF2B54">12:00</font>
         </span>
       </div>
-      <div class="body">
-        <img src style="width:6.5rem; height:6.5rem; border:1px solid red" class="fl" />
+      <div class="body" v-for="(item,key) in list" :key="key">
+        <img :src='item.productIcon' style="width:6.5rem; height:6.5rem; margin-right:0.43rem;" class="fl" />
         <div>
-          <p>妃立宝洗衣包青春版50g</p>
-          <p style="color:#999999; font-size:0.75rem;">去污新改革 纳米洗衣宝 孕婴可用</p>
+          <p>{{item.productName}}</p>
+          <p style="color:#999999; font-size:0.75rem;">{{item.description}}</p>
           <p class="fx">
-            拼团价 ¥{{cost}}
+            拼团价 ¥{{item.originalPrice}}
             <span
               style="color:#999999; font-size:0.75rem; text-decoration:line-through"
-            >¥22</span>
-            <button @click="pintuangoods()">去拼团</button>
+            >¥{{item.currentPrice}}</span>
           </p>
+           <button @click="pintuangoods()">去拼团</button>
         </div>
         <div class="clear"></div>
       </div>
@@ -35,11 +35,15 @@ export default {
   data () {
     return {
       cost: 3,
-      title: '拼团商城'
+      title: '拼团商城',
+      list: []
     }
   },
   components: {
     tabGroup: tabGroup
+  },
+  mounted () {
+    this.pintuanlist()
   },
   methods: {
     getback () {
@@ -47,6 +51,14 @@ export default {
     },
     pintuangoods () {
       this.$router.push('./goodsneir')
+    },
+    pintuanlist () {
+      this.$http.get('ferrobag-server/groupon/getGrouponList', {params: {pageNum: 1, pageSize: 3}}).then(res => {
+        console.log(res)
+        this.list = res.data.data
+      }
+
+   )
     }
   }
 }
@@ -67,7 +79,9 @@ export default {
     .body {
       margin-top: 0.75rem;
       .fx {
-        margin: 1rem;
+        margin-top:2.5rem;
+        color: #ff4f71;
+        font-size: 0.75rem;
       }
       button {
         float: right;
@@ -78,11 +92,12 @@ export default {
         border: none;
         box-shadow: 0px 0.125rem 0.25rem 0px rgba(255, 175, 189, 1);
         color: #ffffff;
+        margin-top: -2rem;
       }
     }
     .clear {
-      clear: both;
       border: 0.0625rem solid #f4f4f4;
+      margin-top: 1rem;
     }
   }
 }

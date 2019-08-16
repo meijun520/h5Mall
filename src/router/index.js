@@ -28,6 +28,7 @@ import becomemar from '@/components/myorders/coupons/becomemar'
 import fukuan from '@/components/cart/dingdan/fukuan'
 import payfinish from '@/components/cart/dingdan/payfinish'
 import goodsneir from '@/components/group/goodsneir'
+import pingjia from '@/components/group/pingjia'
 
 Vue.use(Router)
 
@@ -172,6 +173,11 @@ export default new Router({
       path: '/goodsneir',
       name: 'goodsneir',
       component: goodsneir
+    },
+    {
+      path: '/pingjia',
+      name: 'pingjia',
+      component: pingjia
     }
 
   ]

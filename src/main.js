@@ -9,6 +9,7 @@ import {Tabbar, TabbarItem} from 'vux'
 // import '@/style/index.scss'
 import router from './router/index'
 import store from './store/store'
+import axios from 'axios'
 Vue.use(VueRouter)
 Vue.component(Tabbar.name, Tabbar)
 Vue.component(TabbarItem.name, TabbarItem)
@@ -18,7 +19,7 @@ Vue.component(TabbarItem.name, TabbarItem)
 }) */
 
 // FastClick.attach(document.body)
-
+Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

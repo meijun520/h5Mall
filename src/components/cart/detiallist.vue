@@ -7,10 +7,10 @@
         <img :src="imgurl" style="height:5rem" />
       </div>
       <div class="item-box">
-        描述{{title}}
+        {{title}}
         <br />
         <span style="color:#999999; font-size:0.687rem">
-        属性{{attribute}}
+        {{attribute}}
         </span>
        
         <br />
@@ -95,6 +95,7 @@ export default {
 </script>
 
 <style  lang="scss" >
+
 .detial { 
   width: calc(100vw - 4rem + 0.0625rem);
   margin-left: 1rem;
@@ -134,7 +135,6 @@ export default {
     .img {
       width: 5rem;
       height: 5rem;
-      border: 0.1rem solid red;
       float: left;
     }
     .vux-number-selector svg {
@@ -160,7 +160,5 @@ export default {
    }
   }
 }
-  .vux-check-icon > .weui-icon-success:before, .vux-check-icon > .weui-icon-success-circle:before{
-  color: #FF214C;
-}
+ 
 </style>

@@ -4,24 +4,24 @@
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
     </tab>
-    <div class="boday">
+    <div class="boday" v-for="(item,key) in CouponList" :key="key">
       <div class="left">
         <div style="margin:1.4rem 0 0 1.5rem">
           <div class="banyuan1"></div>
-          <span>¥300</span>
-          <div style="font-size:0.75rem;color:#999999;">满200元使用</div>
+          <span>¥{{item.amount}}</span>
+          <div style="font-size:0.75rem;color:#999999;">{{item.description}}</div>
         </div>
         <div class="quan">
-          <span style="font-size:0.812rem">全品类通用券</span>
+          <span style="font-size:0.812rem">{{item.couponName}}</span>
 
-          <x-progress :percent="percent2" :show-cancel="false"></x-progress>
+          <x-progress :percent="item.count" :show-cancel="false"></x-progress>
           <div
             style="font-size:0.75rem;color:#999999;position: absolute;top: 1rem;
     left: 8rem;"
-          >{{percent2}}%</div>
+          >{{item.count}}%</div>
           <div style="font-size:0.625rem;color:#999999;">
-            适用平台：全平台
-            <br />有效期至：2019-07-09
+            适用平台：{{item.platform}}
+            <br />有效期至：{{item.enableTime}}
           </div>
         </div>
         <div class="banyuan2"></div>
@@ -48,13 +48,22 @@ export default {
       list: ['全部', '母婴 ', ' 美妆', '洗护 ', '洗衣液 '],
       n: 0,
       title: '领券中心',
-      ab: '我的优惠券'
+      ab: '我的优惠券',
+      CouponList: []
     }
   },
   props: {},
+  mounted () {
+    this.getCouponList()
+  },
   methods: {
     getback () {
       this.$router.push({path: '/', query: {index: this.$route.query.from}})
+    },
+    getCouponList () {
+      this.$http.get('ferrobag-server/coupon/getCouponList?pageNum=1', {params: {pageSize: 3}}).then(res => {
+        this.CouponList = res.data.data
+      })
     }
   }
 }

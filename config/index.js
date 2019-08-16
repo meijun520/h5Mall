@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/ferrobag-server': { 
+        target: 'http://www.techwells.com:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          // '^/crm': '/crm'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

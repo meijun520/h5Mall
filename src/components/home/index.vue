@@ -1,18 +1,21 @@
 <template>
   <div  class="home">
-    <div >
+    <div>
+    </div>
+    <div class="shous">
       <!-- <div class="red">
         <img src="./形状.png" style="margin-top:20.7rem; margin-left:26rem;" />
       </div> -->
-      <img src="@/assets/home/形状结合.png" style="" />
+      <!-- <img src="@/assets/home/形状结合.png" style="" />
     </div>
-    <div class="shous">
+    <div class="shous"> -->
       <search-for
         @click.native="tosearch()"
         :neir="neir"
-        style="float:left;"
+        style="float:left;margin-top: 1.75rem;margin-left:0.5rem;"
       ></search-for>
-          <img src="./形状.png" style="" />
+          <img src="./形状.png" style="margin-top: 2.25rem;
+    margin-left: 0.7rem;" />
     </div>
   
 
@@ -341,13 +344,15 @@ export default {
 .home{
   background-color: #F7F5F5;
   .shous{
-       margin-top: -9rem;
+      background: url(../../assets/home/形状结合.png) no-repeat center;
+      width: 100vw;
+      height: 10.6rem;
   }
 .home-index {
   padding: 0.75rem;
   // overflow-y: auto;
   // overflow: auto;
-  // margin-top: -12rem;
+  margin-top: -6.25rem;
   // padding-top: 25.5rem;
   .right {
     float: right;
@@ -367,6 +372,10 @@ export default {
       border: 0.0625rem solid #ececec;
       margin-left:0.8rem;
       height: 10.6rem;
+     .img img{
+            height: 6.6rem;
+    width: 9.2rem;
+      }
     }
    
   }

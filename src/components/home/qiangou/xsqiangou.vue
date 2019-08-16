@@ -17,20 +17,21 @@
     </div>
     <div style="clear:both"></div>
     <div class="dapai">
-      <div class="body">
-        <img src style="width:6.5rem; height:6.5rem; border:1px solid red" class="fl" />
+      <div class="body" v-for="(item,key) in seckilllist" :key="key">
+        <img :src="item.productIcon" style="width:6.5rem; height:6.5rem;margin-right:0.5rem; " class="fl" />
         <div>
-          <p>妃立宝洗衣包青春版50g</p>
+          <p>{{item.productName}}</p>
           <p style="color:#999999; font-size:0.75rem;">去污新改革 纳米洗衣宝 孕婴可用</p>
-          <x-progress :percent="percent2" :show-cancel="false" ></x-progress>
-          {{percent2}}%
+          <x-progress :percent="item.provideNumber" :show-cancel="false" ></x-progress>
+          {{item.provideNumber}}%
           <p class="fx">
-            拼团价 ¥{{cost}}
+            拼团价 ¥{{item.currentPrice}}
             <span
               style="color:#999999; font-size:0.75rem; text-decoration:line-through"
-            >¥22</span>
-            <button>马上抢</button>
+            >¥{{item.originalPrice}}</span>
+            <!-- <button>马上抢</button> -->
           </p>
+           <button>马上抢</button>
         </div>
         <div class="clear"></div>
       </div>
@@ -44,9 +45,7 @@ import tabGroup from '@/components/group/tab'
 export default {
   data () {
     return {
-      cost: 3,
       shu: {},
-      percent2: 20,
       title: '限时抢购',
       list: [
         {
@@ -69,18 +68,29 @@ export default {
           time: '21:00',
           title: '抢购中'
         }
-      ]
+      ],
+      seckilllist: []
     }
   },
   components: {
     XProgress,
-    tabGroup: tabGroup },
+    tabGroup: tabGroup
+  },
+  mounted () {
+    this.getseckilllist()
+  },
   methods: {
     getback () {
       history.go(-1)
     },
     hdindex (item) {
       this.shu = item
+    },
+    getseckilllist () {
+      this.$http.get('ferrobag-server/seckill/getAll').then(res => {
+        console.log(res)
+        this.seckilllist = res.data.data
+      })
     }
   }
 }
@@ -103,6 +113,8 @@ export default {
       margin-top: 0.75rem;
       .fx {
         margin: 1rem;
+        font-size: 0.75rem;
+        color: #ff4569;
       }
       button {
         color: #ffffff;
@@ -113,6 +125,7 @@ export default {
         border-radius: 1.125rem;
         border: none;
         box-shadow: 0px 0.125rem 0.25rem 0px rgba(255, 175, 189, 1);
+            margin-top: -2.6rem;
       }
     }
     .clear {

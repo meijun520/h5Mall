@@ -74,7 +74,7 @@ export default {
       return require('@/assets/tabbar/我的' + (this.showIndex === 3 ? '' : '未') + '选中.png')
     },
     showIndex () {
-      return this.$route.query.index || 0
+      return Number(this.$route.query.index) || 0
     }
   },
   methods: {
@@ -86,6 +86,9 @@ export default {
     // }
   },
   mounted () {
+    // this.$http.get('/ferrobag-server/productType/all').then(res => {
+    //   console.log(res)
+    // })
   }
 }
 </script>

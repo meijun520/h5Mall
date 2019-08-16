@@ -54,6 +54,7 @@ export default {
 .search1 {
   background-color: white;
   height: 100vh;
+  
   .searchfor{
     position: static;
     padding-top: 2rem;
