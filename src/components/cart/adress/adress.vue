@@ -1,7 +1,7 @@
 <template>
   <div class="adress">
     <tabGroup :title="title"></tabGroup>
-    <div class="address1" :class="a===false?'active':''">
+    <div class="address1" :class="a===false?'active':''" v-if="adress">
       <div class="fl">
         <div>朱晏成&nbsp;&nbsp;133012241224</div>
         <div>
@@ -15,6 +15,12 @@
         <div class="blue" @click="tochangeadress()">编辑</div>
         <div class="red">删除</div>
       </div>
+    </div>
+    <div v-else class="wu">
+      <img src="./无地址.png">
+<p>
+  您还没添加收货地址…
+</p>
     </div>
     <button class="button" @click="newchange()">新增收货地址</button>
   </div>
@@ -32,7 +38,8 @@ export default {
   data () {
     return {
       title: '收货地址',
-      a: true
+      a: true,
+      adress: false
     }
   },
   props: {},
@@ -53,6 +60,8 @@ export default {
 
 <style lang="scss" >
 .adress {
+  height: 100vh;
+   background-color: #ffffff;
   .address1 {
     background: #ffffff;
     padding: 0.85rem;
@@ -99,7 +108,7 @@ export default {
   }
  
   .button {
-    width: 21.4rem;
+    width: 90%;
     height: 3.125rem;
     background: linear-gradient(
       225deg,
@@ -113,7 +122,13 @@ export default {
     font-size: 1rem;
     position: fixed;
     bottom: 3rem;
-    left: 2rem;
+    left: 1rem;
+  }
+  .wu{
+    text-align: center;
+    color: #D2D2D2;
+    padding-top: 4rem;
+   
   }
 }
 </style>

@@ -12,10 +12,8 @@
         <span style="color:#999999; font-size:0.687rem">
         {{attribute}}
         </span>
-       
         <br />
         <span style="color:#FF214C; border:0.0625rem solid #FF5B7A; font-size:0.563rem">包邮</span>
-        <br />
         <div>¥{{cost}}</div>
       </div>
       <div>

@@ -26,7 +26,7 @@
     </div>
     <div class="div3">商品，总价格详情</div>
     <div class="div4" style="float:right">
-      <x-button mini disabled >查看物流</x-button>
+      <x-button mini  @click.native="tologistics()">查看物流</x-button>
       <x-button mini type="warn">去付款</x-button>
       <x-button mini type="warn" @click.native="toassess()" >去评价</x-button>
     </div>
@@ -49,6 +49,9 @@ export default {
     },
     orderdetial () {
       this.$router.push('/orderdetial')
+    },
+    tologistics () {
+      this.$router.push('/logistics')
     }
   }
 }

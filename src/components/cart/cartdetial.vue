@@ -4,6 +4,9 @@
       购物车
       <p style="float:right" @click="bianji()">{{bian}}</p>
     </div>
+    <div v-if="a">
+
+   
     <div class="start">
      
 限时优惠
@@ -20,7 +23,7 @@
         :cost="item.salePrice"
         :count="item.number"
         :check="item.activated"
-        :attribute="item.productProfile"
+        :attribute="item.productId"
         @countChange="a=>{item.count=a}"
         @checkChange="a=>{item.activated=a}"
       ></detial-list>
@@ -58,6 +61,14 @@
         </div>
       </div>
     </div>
+     </div>
+      <div v-else class="b">
+       <img src="./车2.png" >
+       <p>
+        购物车空空如也…
+       </p>
+
+     </div>
   </div>
 </template>
 
@@ -98,7 +109,8 @@ export default {
       bian: '编辑',
       change: true,
       src: require('./购物车.png'),
-      color: '#FF214C'
+      color: '#FF214C',
+      a: true
     }
   },
   methods: {
@@ -178,6 +190,7 @@ export default {
 .header {
   text-align: center;
   padding: 1rem;
+  border-bottom: 0.05rem solid #F7F5F5;
 }
 .start {
   padding:0 1rem;
@@ -220,4 +233,9 @@ margin-right:1rem;
   
   }
 }
+  .b{
+    text-align: center;
+    color: #D2D2D2;
+    padding-top:4rem;
+  }
 </style>

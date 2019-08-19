@@ -1,10 +1,10 @@
 <template>
   <div>
-     <tabGroup :title="title" :ab="ab"></tabGroup>
-    <tab :scroll-threshold="5" class="tab" active-color="red">
+     <tabGroup :title="title" :ab="ab" @toother="coupons"></tabGroup>
+    <tab :scroll-threshold="5" class="tab" active-color="red" >
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
     </tab>
-    <div class="boday" v-for="(item,key) in CouponList" :key="key">
+    <div class="boday" v-for="(item,key) in CouponList" :key="key" >
       <div class="left">
         <div style="margin:1.4rem 0 0 1.5rem">
           <div class="banyuan1"></div>
@@ -64,6 +64,9 @@ export default {
       this.$http.get('ferrobag-server/coupon/getCouponList?pageNum=1', {params: {pageSize: 3}}).then(res => {
         this.CouponList = res.data.data
       })
+    },
+    coupons () {
+      this.$router.push('./coupons')
     }
   }
 }

@@ -29,7 +29,9 @@ import fukuan from '@/components/cart/dingdan/fukuan'
 import payfinish from '@/components/cart/dingdan/payfinish'
 import goodsneir from '@/components/group/goodsneir'
 import pingjia from '@/components/group/pingjia'
-
+import logistics from '@/components/myorders/myorder/logistics'
+import coupons from '@/components/myorders/coupons/coupons'
+import myshop from '@/components/myorders/myshop/myshop'
 Vue.use(Router)
 
 export default new Router({
@@ -178,6 +180,21 @@ export default new Router({
       path: '/pingjia',
       name: 'pingjia',
       component: pingjia
+    },
+    {
+      path: '/logistics',
+      name: 'logistics',
+      component: logistics
+    },
+    {
+      path: '/coupons',
+      name: 'coupons',
+      component: coupons
+    },
+    {
+      path: '/myshop',
+      name: 'myshop',
+      component: myshop
     }
 
   ]

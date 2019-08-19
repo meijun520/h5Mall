@@ -1,9 +1,9 @@
 <template>
   <div class="tab">
-    <img src="./返回.png" class="img1" @click="getback()"/>
+    <img src="./返回.png" class="img1" @click="getback()" />
     <span class="span1">{{title}}</span>
     <img :src="icon" class="img2" />
-    <span class="img2">{{ab}}</span>
+    <span class="img2" @click="too()">{{ab}}</span>
   </div>
 </template>
 
@@ -29,12 +29,14 @@ export default {
       required: false,
       default: ''
     }
-
   },
   computed: {},
   methods: {
     getback () {
       history.go(-1)
+    },
+    too () {
+      this.$emit('toother')
     }
   }
 }
@@ -48,7 +50,7 @@ export default {
   padding-bottom: 0.93rem;
   background-color: #ffffff;
   text-align: center;
- border-bottom:0.0125rem solid #F6F6F6;
+  border-bottom: 0.0125rem solid #f6f6f6;
   .img1 {
     float: left;
   }

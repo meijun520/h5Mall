@@ -21,9 +21,16 @@
         <img :src="item.productIcon" style="width:6.5rem; height:6.5rem;margin-right:0.5rem; " class="fl" />
         <div>
           <p>{{item.productName}}</p>
-          <p style="color:#999999; font-size:0.75rem;">去污新改革 纳米洗衣宝 孕婴可用</p>
-          <x-progress :percent="item.provideNumber" :show-cancel="false" ></x-progress>
-          {{item.provideNumber}}%
+          <p style="color:#999999; font-size:0.75rem;">{{item.productId}}</p>
+          <div style="height: 2rem;
+    line-height: 2rem;">
+    <x-progress :percent="item.provideNumber" :show-cancel="false" ></x-progress>
+          <span>
+ &nbsp;{{item.provideNumber}}%
+          </span>
+          </div>
+      
+         
           <p class="fx">
             拼团价 ¥{{item.currentPrice}}
             <span
@@ -88,7 +95,6 @@ export default {
     },
     getseckilllist () {
       this.$http.get('ferrobag-server/seckill/getAll').then(res => {
-        console.log(res)
         this.seckilllist = res.data.data
       })
     }
