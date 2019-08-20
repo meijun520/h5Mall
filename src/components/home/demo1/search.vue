@@ -1,6 +1,8 @@
 <template>
     <div class="search">
+      
     <img :src="ab()">
+
     <input type="text"  :placeholder="neir" class="input-kw" >
     </div>  
 </template>
