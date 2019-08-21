@@ -23,7 +23,7 @@
         :cost="item.salePrice"
         :count="item.number"
         :check="item.activated"
-        :attribute="item.productId"
+        :attribute="item.deleted"
         @countChange="a=>{item.count=a}"
         @checkChange="a=>{item.activated=a}"
       ></detial-list>

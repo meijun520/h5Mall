@@ -20,12 +20,13 @@
 <script>
 import tabGroup from '@/components/group/tab'
 import bigAnniu from '@/components/group/biganniu'
-import { XInput } from 'vux'
+import { XInput, Group } from 'vux'
 export default {
   components: {
     tabGroup: tabGroup,
     bigAnniu: bigAnniu,
-    XInput
+    XInput,
+    Group
   },
   data () {
     return {

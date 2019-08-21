@@ -3,12 +3,6 @@
     <div>
     </div>
     <div class="shous">
-      <!-- <div class="red">
-        <img src="./形状.png" style="margin-top:20.7rem; margin-left:26rem;" />
-      </div> -->
-      <!-- <img src="@/assets/home/形状结合.png" style="" />
-    </div>
-    <div class="shous"> -->
       <search-for
         @click.native="tosearch()"
         :neir="neir"
@@ -74,8 +68,8 @@
       <div style="margin-top:1rem; ">
         人气TOP榜
         <div class="res">
-<img src='./picture/位图(1).png' />
-        <img src='./picture/第一.png' class="abs" >
+<img src='./picture/位图(1).png' style="width: calc(100vw - 1.5rem);"/>
+        <img src='./picture/第一.png' class="abs">
         </div>
         
       </div>
@@ -327,20 +321,6 @@ export default {
 </script>
 
 <style  lang="scss" >
-// .white {
-//   margin-top: -21rem;
-//   .red {
-//     background-image: linear-gradient(to bottom, #ff718d, #ff254f);
-
-//     height: 32rem;
-//     width: 32rem;
-//     border-radius: 32rem;
-//     position: absolute;
-//     margin-left: 50vw;
-//     left: -16rem;
-//     margin-top: 2rem;
-//   }
-// }
 .home{
   background-color: #F7F5F5;
   .shous{
@@ -432,6 +412,7 @@ export default {
   }
   .res{
     position: relative;
+    
     .abs{
       position:absolute;
       left: 0rem;
