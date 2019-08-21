@@ -32,6 +32,9 @@ import pingjia from '@/components/group/pingjia'
 import logistics from '@/components/myorders/myorder/logistics'
 import coupons from '@/components/myorders/coupons/coupons'
 import myshop from '@/components/myorders/myshop/myshop'
+import login from '@/components/myorders/login/login'
+import setphone from '@/components/myorders/login/setphone'
+import bindsuccess from '@/components/myorders/login/bindsuccess'
 Vue.use(Router)
 
 export default new Router({
@@ -195,6 +198,21 @@ export default new Router({
       path: '/myshop',
       name: 'myshop',
       component: myshop
+    },
+    {
+      path: '/setphone',
+      name: 'setphone',
+      component: setphone
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/bindsuccess',
+      name: 'bindsuccess',
+      component: bindsuccess
     }
 
   ]

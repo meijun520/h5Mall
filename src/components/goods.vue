@@ -6,10 +6,17 @@
       </div>
       <div class="ms">描述{{title}}
       <div style="color: #DA0217;">¥{{cost}} 
-       <span style="color:#999999; font-size:0.75rem; text-decoration:line-through">
+       <span style="text-decoration:line-through" class="word" v-if="a">
          ¥{{cost}} 
        </span>
-       <img :src="che" style="float:right">
+       <span class="word" v-else>
+         已售23件
+       </span>
+       <div class="fr">
+         <span class="word" v-show='b'>余3件</span>
+ <img :src="che" style="vertical-align: middle;" @click="tojia()">
+       </div>
+      
       </div>
       </div>
     </div>
@@ -43,6 +50,16 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    b: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    a: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data () {
@@ -50,7 +67,11 @@ export default {
       item: true
     }
   },
-  methods: {}
+  methods: {
+    tojia () {
+      this.$emit('add')
+    }
+  }
 }
 </script>
 
@@ -58,9 +79,17 @@ export default {
 .bc{
   background-color: white;
   .ms{
-    padding: 0.375rem 1rem;
+    padding: 0.375rem 0.875rem;
 
-  } 
+  }
+  .word{
+    color:#999999; 
+    font-size:0.75rem; 
+
+  }
+  .fr{
+    float: right;
+  }
 
 }
 

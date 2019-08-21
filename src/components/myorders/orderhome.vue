@@ -2,9 +2,9 @@
   <div class="order">
     <div class="div1">
     
-        <div  @click="topersonalData(a)" class="user">
+        <div   class="user">
           <img src="" >
-          <span>
+          <span @click="topersonalData(a)">
          喵喵啊啊
           </span> 
            <img src="./设置.png" style="float:right; margin-left:1.18rem;" @click="toset()"/>

@@ -9,7 +9,7 @@
          <cell title="性别" value="女" is-link></cell>
      </group>
      <group class="group2">
-       <cell title="更换手机号"   :link='{path:"/"}'></cell>
+       <cell title="更换手机号"   :link='{path:"/setphone"}'></cell>
         <cell title="修改密码"  is-link></cell>
         
      </group>
