@@ -50,7 +50,6 @@
               :title="item.name"
               :imgurl="item.img"
               :cost="item.cost"
-              @click.native="pindetial()"
             ></pai-lie>
           </flexbox-item>
         </flexbox>
@@ -293,9 +292,9 @@ export default {
     icon (a) {
       return require('./demo1/icon/' + a + '.png')
     },
-    pindetial () {
-      this.$router.push('/pindetial')
-    },
+    // pindetial () {
+    //   this.$router.push('/pindetial')
+    // },
     topingou () {
       this.$router.push('./pintuan')
     },

@@ -1,6 +1,6 @@
 <template>
   <div class="">
-   <tabGroup :title="title" :ab="ab">
+   <tabGroup :title="title" :ab="ab" @toother="finish()">
     
    </tabGroup>
   <group>
@@ -11,7 +11,7 @@
     <x-textarea title="详细信息" placeholder="请填写详细信息" :show-counter="false" :rows="3"></x-textarea>
   </group>
   <group>
-       <x-switch title="设为默认地址" :value-map="['0', '1']" v-model="stringValue"></x-switch>
+       <x-switch title="设为默认地址" v-model="stringValue"></x-switch>
   </group>
   </div>
 </template>
@@ -36,7 +36,10 @@ export default {
       ab: '完成',
       value1: '小屋的小屋',
       addressValue: ['广东省', '深圳市', '南山区'],
-      addressData: ChinaAddressV4Data
+      addressData: ChinaAddressV4Data,
+      stringValue: true,
+      id: this.$route.query.id,
+      addressForm: {}
 
     }
   },
@@ -45,7 +48,15 @@ export default {
 
   },
   methods: {
+    finish () {
+      console.log(this.list)
+    }
 
+  },
+  mounted () {
+    this.$http.get('/*获取详情的接口*/', {params: {addressId: this.id}}).then(res => {
+      this.addressForm = res.data.data// 你要的详情
+    })
   }
 }
 </script>

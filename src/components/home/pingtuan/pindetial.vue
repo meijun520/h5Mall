@@ -5,7 +5,7 @@
       </div>
     </div>
     <div class="header">
-          <img src='./返回1.png' @click.native="toback()" style=" float:left;
+          <img src='./返回1.png' @click="toback()" style=" float:left;
     padding-left: 0.85rem;">
           <span>拼团详情</span>
         </div>
@@ -26,7 +26,7 @@
           <img src="">
           <img src="" >
         </div>
-        <x-button type="warn">立即参团</x-button>
+        <big-anniu :title='a'></big-anniu>
         <div style="color:#999999; font-size:0.69rem;width:11rem; margin:auto">
           拼团须知 人满发货，人不满退款
         </div>
@@ -41,12 +41,14 @@
 import goodsDetial from '@/components/group/goodsdetial'
 import { Clocker, XButton } from 'vux'
 import youLike from '@/components/group/youlike'
+import bigAnniu from '@/components/group/biganniu'
 export default {
   components: {
     goodsDetial: goodsDetial,
     Clocker,
     XButton,
-    youLike: youLike
+    youLike: youLike,
+    bigAnniu: bigAnniu
   },
   data () {
     return {
@@ -54,13 +56,23 @@ export default {
         { name: '1', img: '', cost: '1', count: 1 },
         { name: '1', img: '', cost: '2', count: 2 },
         { name: '2', img: '', cost: '3', count: 3 }
-      ]
+      ],
+      a: '立即参团',
+      groupondata: {}
     }
   },
   methods: {
     toback () {
       this.$router.push('/')
+    },
+    getgroupon () {
+      this.$http.get('ferrobag-server/groupon/getGrouponById/1').then(res => {
+        this.groupondata = res.data.data
+      })
     }
+  },
+  mounted () {
+    this.getgroupon()
   }
 }
 </script>
@@ -103,9 +115,6 @@ export default {
         margin: 0.5rem;
         color: #ffffff;
       }
-    }
-    button.weui-btn, input.weui-btn{
-      width: 70%;
     }
   }
   .like{

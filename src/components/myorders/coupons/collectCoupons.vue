@@ -61,7 +61,7 @@ export default {
       this.$router.push({path: '/', query: {index: this.$route.query.from}})
     },
     getCouponList () {
-      this.$http.get('ferrobag-server/coupon/getCouponList?pageNum=1', {params: {pageSize: 3}}).then(res => {
+      this.$http.get('ferrobag-server/coupon/getCouponList', {params: {pageNum: 1, pageSize: 3}}).then(res => {
         this.CouponList = res.data.data
       })
     },

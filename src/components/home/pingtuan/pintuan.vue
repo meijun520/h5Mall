@@ -20,7 +20,7 @@
               style="color:#999999; font-size:0.75rem; text-decoration:line-through"
             >¥{{item.currentPrice}}</span>
           </p>
-           <button @click="pintuangoods()">去拼团</button>
+           <button @click="pintuangoods(key)">去拼团</button>
         </div>
         <div class="clear"></div>
       </div>
@@ -49,8 +49,8 @@ export default {
     getback () {
       history.go(-1)
     },
-    pintuangoods () {
-      this.$router.push('./goodsneir')
+    pintuangoods (key) {
+      this.$router.push({path: './pindetial', query: {productId: this.list[key].productId}})
     },
     pintuanlist () {
       this.$http.get('ferrobag-server/groupon/getGrouponList', {params: {pageNum: 1, pageSize: 3}}).then(res => {

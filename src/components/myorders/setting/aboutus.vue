@@ -66,7 +66,6 @@ export default {
     padding-top: 2.8rem;
   }
   .text{
-    width: 21rem;
     font-size:0.82rem;
     line-height: 1.31rem;
     margin: 1rem  2.5rem 5rem 2.5rem;

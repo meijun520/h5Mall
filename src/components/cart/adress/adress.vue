@@ -1,26 +1,31 @@
 <template>
   <div class="adress">
     <tabGroup :title="title"></tabGroup>
-    <div class="address1" :class="a===false?'active':''" v-if="adress">
-      <div class="fl">
-        <div>朱晏成&nbsp;&nbsp;133012241224</div>
-        <div>
-          <span class="moren">默认</span>
-          <span style="color:#666666; font-size:0.8rem">中国,上海,长宁区,福泉路200号快递柜</span>
+    <div v-if="adress">
+      <div
+        class="address1"
+        :class="a===false?'active':''"
+        v-for="(item,key) in adresslist"
+        :key="key"
+      >
+        <div class="fl">
+          <div>{{item.addressee}}&nbsp;&nbsp;{{item.addresseePhone}}</div>
+          <div class="fr">
+            <span class="moren">默认</span>
+            <span style="color:#666666; font-size:0.8rem">{{item.address}}</span>
+          </div>
         </div>
-      </div>
 
-      <span class="bianji" @click="bianji()" v-if="a">编辑</span>
-      <div class="bianji" v-else>
-        <div class="blue" @click="tochangeadress()">编辑</div>
-        <div class="red">删除</div>
+        <span class="bianji" @click="bianji(key)">编辑</span>
+        <div class="bianji" v-show="a===key">
+          <div class="blue" @click="tochangeadress(item)">编辑</div>
+          <div class="red">删除</div>
+        </div>
       </div>
     </div>
     <div v-else class="wu">
-      <img src="./无地址.png">
-<p>
-  您还没添加收货地址…
-</p>
+      <img src="./无地址.png" />
+      <p>您还没添加收货地址…</p>
     </div>
     <button class="button" @click="newchange()">新增收货地址</button>
   </div>
@@ -38,21 +43,34 @@ export default {
   data () {
     return {
       title: '收货地址',
-      a: true,
-      adress: false
+      a: '',
+      adress: true,
+      adresslist: []
     }
   },
   props: {},
   computed: {},
+  mounted () {
+    this.getaddress()
+  },
   methods: {
-    bianji () {
-      this.a = false
+    bianji (key) {
+      this.a = key
     },
     newchange () {
       this.$router.push('./newadress')
     },
-    tochangeadress () {
-      this.$router.push('./changeadress')
+    tochangeadress (item) {
+      this.$router.push({path: './changeadress', query: {id: item.addressId}})
+    },
+    getaddress () {
+      this.$http
+        .get('ferrobag-server/address/getAddressList', {
+          params: { userId: 4, pageNum: 2, pageSize: 2 }
+        })
+        .then(res => {
+          this.adresslist = res.data.data
+        })
     }
   }
 }
@@ -61,7 +79,7 @@ export default {
 <style lang="scss" >
 .adress {
   height: 100vh;
-   background-color: #ffffff;
+  background-color: #ffffff;
   .address1 {
     background: #ffffff;
     padding: 0.85rem;
@@ -78,6 +96,9 @@ export default {
     }
     .fl {
       float: left;
+    }
+    .fr {
+      float: right;
     }
     .bianji {
       float: right;
@@ -100,13 +121,12 @@ export default {
       background: #ff8721;
       line-height: 4.7rem;
     }
-  
   }
-     .active {
+  .active {
     margin-left: -5rem;
     padding: 0rem;
   }
- 
+
   .button {
     width: 90%;
     height: 3.125rem;
@@ -124,11 +144,10 @@ export default {
     bottom: 3rem;
     left: 1rem;
   }
-  .wu{
+  .wu {
     text-align: center;
-    color: #D2D2D2;
+    color: #d2d2d2;
     padding-top: 4rem;
-   
   }
 }
 </style>

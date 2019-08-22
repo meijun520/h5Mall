@@ -18,7 +18,7 @@
         <div class="a">分类推荐</div>
         <flexbox :gutter="0" wrap="wrap">
           <!-- 使用vux组件 -->
-          <flexbox-item :span="1/3" v-for="(item,key) in shuz.childrenType" :key="key">
+          <flexbox-item :span="1/3" v-for="(item,key) in shuz.children" :key="key">
             <div class="flex-demo" >
                 <img  :src="item.level" class="img" />
                 <span class="typename">
