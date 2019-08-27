@@ -50,7 +50,7 @@ export default {
       history.go(-1)
     },
     pintuangoods (key) {
-      this.$router.push({path: './pindetial', query: {productId: this.list[key].productId}})
+      this.$router.push({path: './pindetial', query: {id: this.list[key].productId}})
     },
     pintuanlist () {
       this.$http.get('ferrobag-server/groupon/getGrouponList', {params: {pageNum: 1, pageSize: 3}}).then(res => {

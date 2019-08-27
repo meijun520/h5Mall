@@ -66,7 +66,7 @@ export default {
     getaddress () {
       this.$http
         .get('ferrobag-server/address/getAddressList', {
-          params: { userId: 4, pageNum: 2, pageSize: 2 }
+          params: { userId: this.$store.state.userid, pageNum: 2, pageSize: 2 }
         })
         .then(res => {
           this.adresslist = res.data.data

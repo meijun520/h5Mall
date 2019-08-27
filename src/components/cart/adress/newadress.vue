@@ -7,6 +7,7 @@
        <x-address  :title="title1" :list="addressData"  placeholder="请选择地址" ></x-address>
          <x-address   :title="title2"  :list="addressData"  placeholder="请选择街道" ></x-address>
            <x-textarea :max="20" :placeholder="title3"></x-textarea>
+            <x-switch title="设为默认地址" v-model="stringValue"></x-switch>
     </group>
 
 
@@ -15,14 +16,15 @@
 
 <script>
 import tabGroup from '@/components/group/tab'
-import { XInput, Group, XAddress, ChinaAddressV4Data, XTextarea } from 'vux'
+import { XInput, Group, XAddress, ChinaAddressV4Data, XTextarea, XSwitch } from 'vux'
 export default {
   components: {
     tabGroup: tabGroup,
     XInput,
     Group,
     XAddress,
-    XTextarea
+    XTextarea,
+    XSwitch
 
   },
   data () {

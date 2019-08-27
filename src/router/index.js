@@ -32,9 +32,16 @@ import pingjia from '@/components/group/pingjia'
 import logistics from '@/components/myorders/myorder/logistics'
 import coupons from '@/components/myorders/coupons/coupons'
 import myshop from '@/components/myorders/myshop/myshop'
-import login from '@/components/myorders/login/login'
+import weiixnlogin from '@/components/myorders/login/weixinlogin'
 import setphone from '@/components/myorders/login/setphone'
 import bindsuccess from '@/components/myorders/login/bindsuccess'
+import login from '@/components/myorders/login/login'
+import mimalogin from '@/components/myorders/login/mimalogin'
+import zhuce from '@/components/myorders/login/zhuce'
+import changepassword from '@/components/myorders/login/changepassword'
+import setpassword from '@/components/myorders/login/setpassword'
+import setsuccess from '@/components/myorders/login/setsuccess'
+
 Vue.use(Router)
 
 export default new Router({
@@ -205,14 +212,44 @@ export default new Router({
       component: setphone
     },
     {
-      path: '/login',
-      name: 'login',
-      component: login
+      path: '/weixinlogin',
+      name: 'weixnlogin',
+      component: weiixnlogin
     },
     {
       path: '/bindsuccess',
       name: 'bindsuccess',
       component: bindsuccess
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/mimalogin',
+      name: 'mimalogin',
+      component: mimalogin
+    },
+    {
+      path: '/zhuce',
+      name: 'zhuce',
+      component: zhuce
+    },
+    {
+      path: '/changepassword',
+      name: 'changepassword',
+      component: changepassword
+    },
+    {
+      path: '/setpassword',
+      name: 'setpassword',
+      component: setpassword
+    },
+    {
+      path: '/setsuccess',
+      name: 'setsuccess',
+      component: setsuccess
     }
 
   ]

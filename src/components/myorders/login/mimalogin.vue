@@ -1,7 +1,7 @@
 <template>
-  <div class="login">
+  <div class="mimalogin">
     <tabGroup></tabGroup>
-    <h2>登陆</h2>
+    <h2>密码登录</h2>
     <group>
       <x-input placeholder="请输入手机号码">
         <img
@@ -9,8 +9,7 @@
           src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg"
         />
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码">
-        <button slot="right" class="button">获取动态码</button>
+      <x-input class="weui-vcode" placeholder="输入密码">
       </x-input>
     </group>
     <span class="fr">忘记密码？</span>
@@ -66,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.login {
+.mimalogin {
   background: #ffffff;
   height: 100vh;
   .tab {
