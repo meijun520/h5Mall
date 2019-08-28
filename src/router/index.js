@@ -19,7 +19,6 @@ import dealMassage from '@/components/myorders/massage/dealMassage'
 import dingDan from '@/components/cart/dingdan/dingdan'
 import adress from '@/components/cart/adress/adress'
 import newadress from '@/components/cart/adress/newadress'
-import changeadress from '@/components/cart/adress/changeadress'
 import addhui from '@/components/myorders/huiyuan/addhui'
 import set from '@/components/myorders/setting/set'
 import view from '@/components/myorders/setting/view'
@@ -132,19 +131,19 @@ export default new Router({
       component: dingDan
     },
     {
-      path: '/adress',
-      name: 'adress',
+      path: '/addressList',
+      name: 'addressList',
       component: adress
     },
     {
-      path: '/newadress',
-      name: 'newadress',
+      path: '/newAddress',
+      name: 'newAddress',
       component: newadress
     },
     {
-      path: '/changeadress',
-      name: 'changeadress',
-      component: changeadress
+      path: '/editAddress',
+      name: 'editAddress',
+      component: newadress
     },
     {
       path: '/addhui',

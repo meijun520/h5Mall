@@ -1,13 +1,13 @@
 <template>
-  <div class="">
-   <tabGroup :title="title" :ab='ab' @toother="keep()"></tabGroup>
+  <div class="adress">
+    <tabGroup :title="$route.path==='/editAddress'?'编辑地址':'新增地址'"></tabGroup>
     <group>
       <x-input title="姓名" name="username" placeholder="请输入姓名" is-type="china-name" v-model="this.form.userId"></x-input>
       <x-input title="电话" name="username" placeholder="输入收货人电话" v-model="this.form.addresseePhone"></x-input >
-       <x-address  :title="title1" :list="addressData"  placeholder="请选择地址" ></x-address>
-         <x-address   :title="title2"  :list="addressData"  placeholder="请选择街道" ></x-address>
+       <x-address  :title="title1" v-model="form.address" :list="addressData" @on-hide="getStreet"  placeholder="请选择地址" ></x-address>
+         
            <x-textarea :max="20" :placeholder="title3"></x-textarea>
-            <x-switch title="设为默认地址" v-model="stringValue"></x-switch>
+            <x-switch title="设为默认地址" v-model="form.stringValue"></x-switch>
     </group>
 
 
@@ -16,7 +16,8 @@
 
 <script>
 import tabGroup from '@/components/group/tab'
-import { XInput, Group, XAddress, ChinaAddressV4Data, XTextarea, XSwitch } from 'vux'
+import { XInput, Group, XAddress, XTextarea, XSwitch } from 'vux'
+
 export default {
   components: {
     tabGroup: tabGroup,
@@ -34,11 +35,14 @@ export default {
       title2: '街道',
       title3: '输入详细地址',
       ab: '保存',
-      addressData: ChinaAddressV4Data,
+
+      addressData: [],
       form: {
         userId: '',
         addressee: '',
-        addresseePhone: ''
+        addresseePhone: '',
+        address: [],
+        stringValue: false
       }
 
     }
@@ -60,6 +64,20 @@ export default {
     getcitylist () {
       this.$http.get('ferrobag-server/city/getCityList').then(res => {
         this.citylist = res.data.data
+        console.log(this.citylist)
+        this.citylist.forEach(item => {
+          item.value = item.code
+          item.parent = item.parentCode
+        })
+        this.addressData = this.citylist
+      })
+    },
+    getStreet () {
+      this.$http.get('ferrobag-server/city/getCityList', {params: {
+        parentCode: this.form.address[2],
+        level: 4
+      }}).then(res => {
+        console.log(res)
       })
     }
 
@@ -71,3 +89,4 @@ export default {
 </script>
 
 <style lang="scss" >
+</style>

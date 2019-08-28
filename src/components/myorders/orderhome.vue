@@ -92,7 +92,7 @@ export default {
       ],
       list2: [
         { label: '邀请好友', icon: '编组', router: 'collectCoupons' },
-        { label: '地址管理', icon: 'Group', router: 'adress' },
+        { label: '地址管理', icon: 'Group', router: 'addressList' },
         { label: '拼团商城', icon: '编组1', router: 'pintuan' },
         { label: '招募代理', icon: '编组2', router: 'myshop' },
         { label: '领券中心', icon: '编组3', router: 'collectCoupons' },

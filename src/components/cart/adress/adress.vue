@@ -58,10 +58,10 @@ export default {
       this.a = key
     },
     newchange () {
-      this.$router.push('./newadress')
+      this.$router.push('./newAddress')
     },
     tochangeadress (item) {
-      this.$router.push({path: './changeadress', query: {id: item.addressId}})
+      this.$router.push({path: './editAddress', query: {id: item.addressId}})
     },
     getaddress () {
       this.$http
