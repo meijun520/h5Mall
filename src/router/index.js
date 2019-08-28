@@ -40,6 +40,7 @@ import zhuce from '@/components/myorders/login/zhuce'
 import changepassword from '@/components/myorders/login/changepassword'
 import setpassword from '@/components/myorders/login/setpassword'
 import setsuccess from '@/components/myorders/login/setsuccess'
+import myCoupons from '@/components/myorders/coupons/myCoupons'
 
 Vue.use(Router)
 
@@ -249,6 +250,11 @@ export default new Router({
       path: '/setsuccess',
       name: 'setsuccess',
       component: setsuccess
+    },
+    {
+      path: '/myCoupons',
+      name: 'myCoupons',
+      component: myCoupons
     }
 
   ]

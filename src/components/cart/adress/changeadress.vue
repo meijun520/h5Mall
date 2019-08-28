@@ -53,10 +53,9 @@ export default {
       console.log(this.list)
     }
 
-  },ie
+  },
   mounted () {
     this.$http.get('ferrobag-server/city/getCityList', {params: {addressId: this.id}}).then(res => {
-     
       this.addressForm = res.data.data// 你要的详情
     })
   }
