@@ -279,6 +279,7 @@ export default {
         float: left;
         width: calc(100% / 3);
         padding:0.5rem 0rem;
+        height: 3.125rem;
        
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="pintuangoods">
+  <div class="goodsneir">
     <tabGroup :title="title" :icon="src"></tabGroup>
     <swiper
       :list="demo02_list"
@@ -173,6 +173,10 @@ export default {
       return require('./分享1.png')
     }
   },
+
+  mounted () {
+    window.scroll(0, 0)
+  },
   methods: {
     topingjia () {
       this.$router.push('./pingjia')
@@ -182,7 +186,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.pintuangoods {
+.goodsneir {
   .div {
     .word {
       color: #a1a1a1;

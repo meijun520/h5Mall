@@ -15,7 +15,7 @@
 
     <div class="home-index">
       <div>
-        <swiper :list="demo06_list" auto style="width:100%;margin:0 auto;" height="180px"  dots-position="center"></swiper>
+        <swiper :list="demo06_list" auto style="width:100%;margin:0 auto;" height="180px"  dots-position="center" @click.native="goodsneir ()"></swiper>
       </div>
       <div class="div1">
         <div class="item-head">
@@ -33,6 +33,7 @@
           :imgurl="item.img"
           :cost="item.cost"
           style="float:left"
+          @click.native="goodsneir ()"
         ></pai-lie>
         <div style="clear:both;"></div>
       </div>
@@ -50,6 +51,7 @@
               :title="item.name"
               :imgurl="item.img"
               :cost="item.cost"
+              @click.native="pintuangoods()"
             ></pai-lie>
           </flexbox-item>
         </flexbox>
@@ -66,7 +68,7 @@
       </div>
       <div style="margin-top:1rem; ">
         人气TOP榜
-        <div class="res">
+        <div class="res" @click="goodsneir()">
 <img src='./picture/位图(1).png' style="width: calc(100vw - 1.5rem);"/>
         <img src='./picture/第一.png' class="abs">
         </div>
@@ -75,7 +77,8 @@
       <div class="div4">
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" class="res">
-            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"></pai-lie>
+            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
+            @click.native="goodsneir ()"></pai-lie>
              <img :src="item.img1" class="abs">
           </flexbox-item>
         </flexbox>
@@ -88,19 +91,49 @@
             <img :src="moreicon" />
           </p>
         </div>
-        <img src alt />
-        <img src alt />
+       <div class="youhui">
+         <div style="float:left">
+         <div class="span">
+           大额优惠劵
+         </div>
+         <div>
+ <button class="button">
+           限时抢
+         </button>
+         </div>
+        
+         </div>
+         <img src="" class="img">
+      
+       </div>
+         <div class="youhui1">
+         <div style="float:left">
+         <div class="span">
+           大额优惠劵
+         </div>
+         <div>
+ <button class="button">
+           限时抢
+         </button>
+         </div>
+        
+         </div>
+         <img src="" class="img">
+  
+       </div>
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key">
-            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"></pai-lie>
+            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
+            @click.native="goodsneir ()"></pai-lie>
           </flexbox-item>
         </flexbox>
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" >
-            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"></pai-lie>
+            <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
+            @click.native="goodsneir ()"></pai-lie>
           </flexbox-item>
         </flexbox>
-        <x-button type="warn">开通会员</x-button>
+        <x-button type="warn" @click.native="huiyuan()">开通会员</x-button>
       </div>
       <div class="div6">
         <p @click="toxsqiangou()">限时抢购</p>
@@ -135,7 +168,7 @@
               style="color:#999999; font-size:0.75rem; 
              text-decoration:line-through"
             >¥67</span>
-            <x-button mini type="warn" style="float:right">马上抢</x-button>
+            <x-button mini type="warn" style="float:right" @click.native="goodsneir ()">马上抢</x-button>
           </p>
         </div>
       </div>
@@ -298,11 +331,20 @@ export default {
     topingou () {
       this.$router.push('./pintuan')
     },
+    pintuangoods () {
+      this.$router.push('./pintuangoods')
+    },
     toxsqiangou () {
       this.$router.push('./xsqiangou')
     },
     tosearch () {
       this.$router.push('./searchfor')
+    },
+    goodsneir () {
+      this.$router.push('./goodsneir')
+    },
+    huiyuan () {
+      this.$router.push('./addhui')
     }
 
     // picture (key) {
@@ -375,6 +417,63 @@ export default {
     button.weui-btn,
     input.weui-btn {
       width: 50%;
+    }
+    .youhui{
+      height:5.3rem;
+      width: calc(50% - 2rem);
+      background: #F3F1EB;
+      border-radius: 0.3rem;
+      margin-left: 0.75rem;
+      padding: 0.5rem;
+      float: left;
+      .span{
+        color: #F49900;
+        font-size: 0.812rem;
+      }
+      .img{
+        margin-left:0.5rem;
+        float: right;
+           height:4.3rem;
+        width: 3.4rem;
+      }
+      .button{
+        background: #FFA611;
+        width: 3.8rem;
+        height: 1.75rem;
+        border: none;
+        color: #FFFFFF;
+        border-radius: 1rem;
+        margin-top:0.5rem;
+      }
+    }
+     .youhui1{
+      height:5.3rem;
+      width: calc(50% - 2rem);
+      background: #FFDFDF;
+      border-radius: 0.3rem;
+      margin-right: 0.75rem;
+      padding: 0.5rem;
+      float: right;
+       .span{
+        color: #F66565;
+        font-size: 0.812rem;
+      }
+      .img{
+        margin-left:0.5rem;
+        float: right;
+        height:4.3rem;
+        width: 3.4rem;
+      }
+        .button{
+        background: #F66565;
+        width: 3.8rem;
+        height: 1.75rem;
+        border: none;
+        color: #FFFFFF;
+        border-radius: 1rem;
+        margin-top:0.5rem;
+
+      }
     }
   }
   .div6 {

@@ -1,19 +1,15 @@
 <template>
   <div class="order">
     <div class="div1">
-    
-        <div   class="user">
-          <img src="" >
-          <span @click="topersonalData(a)">
-         喵喵啊啊
-          </span> 
-           <img src="./设置.png" style="float:right; margin-left:1.18rem;" @click="toset()"/>
-        <img src="./消息.png" style="float:right;" @click="tomassage()"/>
+      <div class="user">
+        
+  <img src style="width:3.05rem; height:3.05rem" />
+        <span @click="topersonalData(a)">喵喵啊啊</span>
        
-            
+      <img src="./设置.png" style="float:right; margin-left:1.18rem;" @click="toset()" />
+        <img src="./消息.png" style="float:right;" @click="tomassage()" />
+       
   
-     
-       
       </div>
       <div style="padding:0 2.31rem;">
         <div v-for="(item,key) in list" :key="key" class="massage">
@@ -95,7 +91,7 @@ export default {
         { label: '地址管理', icon: 'Group', router: 'addressList' },
         { label: '拼团商城', icon: '编组1', router: 'pintuan' },
         { label: '招募代理', icon: '编组2', router: 'myshop' },
-        { label: '领券中心', icon: '编组3', router: 'collectCoupons' },
+        { label: '领券中心', icon: '编组3', router: 'myshop' },
         { label: '常见问题', icon: '编组4', router: 'collectCoupons' },
         { label: '联系客服', icon: '编组5', router: 'collectCoupons' },
         { label: '成为商家', icon: '编组6', router: 'becomemar' }
@@ -128,7 +124,7 @@ export default {
     topersonalData (a) {
       this.$router.push({
         path: './personalData',
-        query: {from: this.$route.query.index}
+        query: { from: this.$route.query.index }
       })
     },
     tomassage () {
@@ -157,16 +153,15 @@ export default {
     background-image: linear-gradient(to right, #ff718d, #ff254f);
     color: #ffffff;
     .user {
-    padding:0 1.25rem;
-   padding-top: 3.37rem;
+      padding: 0 1.25rem;
+      padding-top: 3.37rem;
       // img {
       //   float: right;
       // }
     }
     .massage {
       float: left;
-      width: calc(100%/4);
-     
+      width: calc(100% / 4);
     }
   }
   .div2 {

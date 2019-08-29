@@ -8,7 +8,7 @@
         v-for="(item,key) in adresslist"
         :key="key"
       >
-        <div class="fl">
+        <div class="fl" :class="a===key?'active':''">
           <div>{{item.addressee}}&nbsp;&nbsp;{{item.addresseePhone}}</div>
           <div class="fr">
             <span class="moren">默认</span>
@@ -16,8 +16,8 @@
           </div>
         </div>
 
-        <span class="bianji" @click="bianji(key)">编辑</span>
-        <div class="bianji" v-show="a===key">
+        <span class="bianji" @click="bianji(key)" >编辑</span>
+        <div class="bianji1" v-show="a===key">
           <div class="blue" @click="tochangeadress(item)">编辑</div>
           <div class="red">删除</div>
         </div>
@@ -82,8 +82,9 @@ export default {
   background-color: #ffffff;
   .address1 {
     background: #ffffff;
-    padding: 0.85rem;
+  padding-right: 0.85rem;
     height: 4.68rem;
+    border-bottom: 0.0625rem solid #E6E6E6;
     .moren {
       width: 2rem;
       height: 1.25rem;
@@ -96,6 +97,7 @@ export default {
     }
     .fl {
       float: left;
+      padding: 0.85rem;
     }
     .fr {
       float: right;
@@ -104,6 +106,13 @@ export default {
       float: right;
       line-height: 4.68rem;
       text-align: center;
+    }
+    .bianji1 {
+    float: right;
+    line-height: 4.68rem;
+     text-align: center;
+     position: absolute;
+    right: 0rem;
     }
     .blue {
       float: left;

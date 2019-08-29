@@ -17,6 +17,7 @@
           :border="false"
           class="pai"
           :che="src"
+          @click.native="goodsneir ()"
         ></pai-lie>
         <div style="clear:both; margin-bottom:10rem"></div>
   </div>
@@ -39,6 +40,9 @@ export default {
     }
   },
   methods: {
+    goodsneir () {
+      this.$router.push('/goodsneir')
+    }
 
   }
 }

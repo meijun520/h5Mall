@@ -4,7 +4,8 @@
 </search-for>
 <div style="float: right;
     margin-top: -2.3rem;
-    margin-right: 0.5rem;">
+    margin-right: 0.5rem;"
+    @click="toback()">
 取消
 </div>
 
@@ -45,6 +46,9 @@ export default {
     // },
     sresult () {
       this.$router.push('/pailie')
+    },
+    toback () {
+      history.go(-1)
     }
   }
 }

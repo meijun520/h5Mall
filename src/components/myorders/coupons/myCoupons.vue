@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     getback () {
-      history(-1)
+      history.go(-1)
     },
     getmyCouponList () {
       this.$http

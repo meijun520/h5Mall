@@ -10,6 +10,10 @@ import {Tabbar, TabbarItem} from 'vux'
 import router from './router/index'
 import store from './store/store'
 import axios from 'axios'
+router.beforeEach((to, from, next) => {
+  window.scroll(0, 0)
+  next()
+})
 Vue.use(VueRouter)
 Vue.component(Tabbar.name, Tabbar)
 Vue.component(TabbarItem.name, TabbarItem)
