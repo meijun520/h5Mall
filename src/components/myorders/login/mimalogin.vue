@@ -72,7 +72,10 @@ export default {
       this.$router.push('/zhuce')
     },
     orderhome () {
-      this.$router.push('/orderhome')
+      this.$router.push({
+        path: '/',
+        query: { from: this.$route.query.index }
+      })
     }
   }
 }

@@ -187,6 +187,11 @@ export default new Router({
       name: 'goodsneir',
       component: goodsneir
     },
+    {path: '/pintuangoodsneir',
+      name: 'pintuangoodsneir',
+      component: goodsneir
+
+    },
     {
       path: '/pingjia',
       name: 'pingjia',

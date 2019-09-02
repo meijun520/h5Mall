@@ -38,7 +38,7 @@
             >¥{{item.originalPrice}}</span>
             <!-- <button>马上抢</button> -->
           </p>
-           <button>马上抢</button>
+           <button @click="pintuangoodsneir()">马上抢</button>
         </div>
         <div class="clear"></div>
       </div>
@@ -97,6 +97,9 @@ export default {
       this.$http.get('ferrobag-server/seckill/getAll').then(res => {
         this.seckilllist = res.data.data
       })
+    },
+    pintuangoodsneir () {
+      this.$router.push('./pintuangoodsneir')
     }
   }
 }

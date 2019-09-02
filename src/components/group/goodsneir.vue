@@ -8,7 +8,7 @@
       dots-position="center"
     ></swiper>
     <div class="div">
-      <div class="div1" v-show="this.$">
+      <div class="div1" v-show="$route.path==='/pintuangoodsneir'?true:false">
         <span style="color:#FFCDD6"> ¥540.00</span>
         <span style="float:right">距结束 12 : 43 : 45</span>
       </div>

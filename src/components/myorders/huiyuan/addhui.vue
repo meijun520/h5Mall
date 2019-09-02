@@ -27,7 +27,6 @@
           :label="item.label"
           v-for="(item,key) in list2"
           :key="key"
-          @click.native="serve(item.router)"
         >
           <img slot="icon" :src="geticon(item.icon)" />
         </grid-item>
@@ -48,12 +47,12 @@ export default {
     return {
       title: '加入会员',
       list2: [
-        { label: '邀请好友', icon: '3', router: 'collectCoupons' },
-        { label: '地址管理', icon: '7', router: 'addressList' },
-        { label: '拼团商城', icon: '9', router: 'pintuan' },
-        { label: '招募代理', icon: '11', router: 'myshop' },
-        { label: '领券中心', icon: '13', router: 'collectCoupons' },
-        { label: '常见问题', icon: '15', router: 'collectCoupons' }
+        { label: '邀请好友', icon: '3' },
+        { label: '地址管理', icon: '7' },
+        { label: '拼团商城', icon: '9' },
+        { label: '招募代理', icon: '11' },
+        { label: '领券中心', icon: '13' },
+        { label: '常见问题', icon: '15' }
       ]
 
     }
@@ -63,9 +62,6 @@ export default {
   methods: {
     geticon (icon) {
       return require('./' + icon + '.png')
-    },
-    serve (a) {
-      this.$router.push('/' + a)
     },
     getback () {
       console.log(1)

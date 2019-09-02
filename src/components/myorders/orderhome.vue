@@ -142,7 +142,10 @@ export default {
       this.$router.push('./set')
     },
     tologin () {
-      this.$router.push('./login')
+      this.$router.push({
+        path: './login',
+        query: { from: this.$route.query.index }
+      })
     }
   }
 }

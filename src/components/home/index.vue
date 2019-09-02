@@ -168,7 +168,7 @@
               style="color:#999999; font-size:0.75rem; 
              text-decoration:line-through"
             >¥67</span>
-            <x-button mini type="warn" style="float:right" @click.native="goodsneir ()">马上抢</x-button>
+            <x-button mini type="warn" style="float:right" @click.native="pintuangoodsneir ()">马上抢</x-button>
           </p>
         </div>
       </div>
@@ -342,6 +342,9 @@ export default {
     },
     goodsneir () {
       this.$router.push('./goodsneir')
+    },
+    pintuangoodsneir () {
+      this.$router.push('./pintuangoodsneir')
     },
     huiyuan () {
       this.$router.push('./addhui')

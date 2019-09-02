@@ -78,7 +78,10 @@ export default {
       this.$router.push('/changepassword')
     },
     success () {
-      this.$router.push('/orderhome')
+      this.$router.push({
+        path: '/',
+        query: { index: this.$route.query.from }
+      })
     }
   }
 }
