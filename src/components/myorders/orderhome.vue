@@ -1,18 +1,17 @@
 <template>
   <div class="order">
     <div class="div1">
-      <div class="user">
-        
-  <img src style="width:3.05rem; height:3.05rem" />
+      <div class="user" style="vertical-align:middle;">
+        <img src style="width:3.05rem; height:3.05rem;vertical-align: middle;" />
         <span @click="topersonalData(a)">喵喵啊啊</span>
-       
-      <img src="./设置.png" style="float:right; margin-left:1.18rem;" @click="toset()" />
-        <img src="./消息.png" style="float:right;" @click="tomassage()" />
-       
-  
+
+        <img src="./设置.png" @click="toset()" class="fr" />
+        <img src="./消息.png" @click="tomassage()" class="fr" />
       </div>
-      <div style="padding:0 2.31rem;">
-        <div v-for="(item,key) in list" :key="key" class="massage">
+
+      <div style="clear:both"></div>
+      <div style="padding:0 2.31rem;" >
+        <div v-for="(item,key) in list" :key="key" class="massage" @click="serve(item.router)">
           <p>{{item.shu}}</p>
 
           <div>{{item.zi}}</div>
@@ -74,10 +73,10 @@ export default {
   data () {
     return {
       list: [
-        { shu: 0, zi: '收藏' },
-        { shu: 0, zi: '账户' },
-        { shu: 0, zi: '积分' },
-        { shu: 0, zi: '优惠券' }
+        { shu: 0, zi: '收藏', router: 'myCollect' },
+        { shu: 0, zi: '账户', router: '' },
+        { shu: 0, zi: '积分', router: '' },
+        { shu: 0, zi: '优惠券', router: 'collectCoupons' }
       ],
       list1: [
         { label: '待付款', icon: '形状' },
@@ -158,6 +157,10 @@ export default {
       // img {
       //   float: right;
       // }
+    }
+    .fr{
+      float: right;
+      margin-left: 1rem;
     }
     .massage {
       float: left;

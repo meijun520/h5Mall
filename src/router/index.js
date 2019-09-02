@@ -41,6 +41,7 @@ import changepassword from '@/components/myorders/login/changepassword'
 import setpassword from '@/components/myorders/login/setpassword'
 import setsuccess from '@/components/myorders/login/setsuccess'
 import myCoupons from '@/components/myorders/coupons/myCoupons'
+import myCollect from '@/components/myorders/personal/myCollect'
 
 Vue.use(Router)
 
@@ -255,6 +256,11 @@ export default new Router({
       path: '/myCoupons',
       name: 'myCoupons',
       component: myCoupons
+    },
+    {
+      path: '/myCollect',
+      name: 'myCollect',
+      component: myCollect
     }
 
   ]

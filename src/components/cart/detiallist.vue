@@ -1,5 +1,5 @@
 <template>
-  <div class="detial">
+  <div class="detiallist">
     <!-- <input type="checkbox" v-model="goodCheck"/> -->
     <check-icon :value.sync="goodCheck" class="icon"></check-icon>
     <div class="border">
@@ -94,7 +94,7 @@ export default {
 
 <style  lang="scss" >
 
-.detial { 
+.detiallist { 
   width: calc(100vw - 4rem + 0.0625rem);
   margin-left: 1rem;
   height: 6.5rem;

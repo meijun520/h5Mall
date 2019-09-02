@@ -22,23 +22,6 @@
           @countChange="a=>{item.count=a}"
           @checkChange="a=>{item.activated=a}"
         ></detial-list>
-        <!-- <div class="cai">
-        <div class="icon">
-          <span>猜你喜欢</span>
-        </div>
-        <pai-lie
-          v-for="(item,key) in list"
-          :key="key"
-          style="float:left"
-          :imgurl="item.img"
-          :title="item.name"
-          :cost="item.cost"
-          :border="false"
-          class="pai"
-          :che="src"
-        ></pai-lie>
-        <div style="clear:both; margin-bottom:10rem"></div>
-        </div>-->
         <you-like></you-like>
         <div class="div3" v-if="change">
           <check-icon
@@ -87,20 +70,6 @@ export default {
   },
   data () {
     return {
-      // list1: [
-      //   { name: '1',
-      //     img: '',
-      //     cost: 1,
-      //     count: 2,
-      //     check: false,
-      //     attribute: 'ok'},
-      //   { name: '1',
-      //     img: '',
-      //     cost: 2,
-      //     count: 5,
-      //     check: false,
-      //     attribute: 'ok'}
-      // ],
       list1: [],
       allcheck: false,
       bian: '编辑',
