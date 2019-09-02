@@ -6,7 +6,7 @@
       <x-input placeholder="请输入手机号码">
         <img
           slot="right-full-height"
-          src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg"
+          src="./删除.png" 
         />
       </x-input>
       <x-input class="weui-vcode" placeholder="输入短信验证码">
@@ -14,7 +14,7 @@
       </x-input>
     </group>
 
-    <big-anniu :title="anniu" :icon="img"></big-anniu>
+    <big-anniu :title="anniu" @click.native="setpassword()"></big-anniu>
   </div>
 </template>
 
@@ -38,7 +38,11 @@ export default {
   },
   props: {},
   computed: {},
-  methods: {}
+  methods: {
+    setpassword () {
+      this.$router.push('/setpassword')
+    }
+  }
 }
 </script>
 
@@ -60,6 +64,13 @@ background:rgba(242,242,242,1);
 border-radius:0.91rem;
 color: #C1C1C1;
 border: none;
+  }
+   .vux-x-input-right-full {
+    line-height: 3.3rem;
+    img {
+      height: 1.3rem;
+      margin-right: 1rem;
+    }
   }
 
 

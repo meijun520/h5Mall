@@ -2,7 +2,7 @@
   <div class="aboutus">
     <tabGroup :title="title"></tabGroup>
     <div class="icon">
-      <img src=" " style="width:3.7rem; height:3.7rem; background:#FF214C" />
+      <img src="./编组.png"/>
       <p>V 1.0.1</p>
     </div>
     <div class="text">

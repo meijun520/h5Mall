@@ -1,7 +1,7 @@
 <template>
   <div class="detial">
     <div style="float:left;">
-<check-icon :value.sync="goodCheck" class="icon" v-show="a"></check-icon>
+    <check-icon :value.sync="goodCheck" class="icon" v-show="iconShow"></check-icon>
     </div>
     
     <div class="border">
@@ -24,16 +24,14 @@
 </template>
  
 <script>
-import { InlineXNumber, CheckIcon } from 'vux'
+import { CheckIcon } from 'vux'
 export default {
   components: {
-    InlineXNumber,
     CheckIcon
   },
   data () {
     return {
-      a: true
-
+      goodCheck: false
     }
   },
   props: {
@@ -56,13 +54,26 @@ export default {
       type: Number,
       default: 0
     },
-    count: {
-      type: Number,
-      default: 1
-    },
-    goodCheck: {
+    check: {
       type: Boolean,
       default: false
+    },
+    iconShow: {
+      type: Boolean,
+      default: false
+    }
+  },
+  created () {
+    this.goodCheck = this.check
+  },
+  watch: {
+    check (newval) {
+      if (this.goodCheck !== newval) {
+        this.goodCheck = newval
+      }
+    },
+    goodCheck (newval) {
+      this.$emit('checkChange', newval)
     }
   },
   methods: {}

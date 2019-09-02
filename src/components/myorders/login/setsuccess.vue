@@ -1,9 +1,7 @@
 <template>
   <div class="setsuccess">
-    <tabGroup :title="title" :ab="ab"></tabGroup>
-
-    <order-parts v-if="a"></order-parts>
-    <div v-else class="b">
+    <tabGroup :title="title" ></tabGroup>
+    <div  class="b">
       <img src="./img/编组.png" />
       <p>密码重置成功</p>
     </div>
@@ -30,16 +28,14 @@ export default {
 
 <style lang="scss" scoped>
 .setsuccess{
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: -5px;
-  left: -5px;
-}
-.b {
+  background: #ffffff;
+  height: 100vh;
+  .b {
   text-align: center;
   color: #d2d2d2;
   padding-top: 4rem;
   background-color: #ffffff;
 }
+}
+
 </style>

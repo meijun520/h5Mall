@@ -3,7 +3,7 @@
     <tabGroup :title="title"></tabGroup>
    
     <div class="b">
-       <img src="" >
+       <img src="./编组.png" >
        <p>
         请在微信授权登录后放心使用妃立宝，<br/> 您的信息和数据将受到保护
        </p>

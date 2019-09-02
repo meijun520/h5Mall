@@ -3,7 +3,12 @@
     <div class="div1">
       <div class="user" style="vertical-align:middle;">
         <img src style="width:3.05rem; height:3.05rem;vertical-align: middle;" />
-        <span @click="topersonalData(a)">喵喵啊啊</span>
+        <span @click="topersonalData(a)" v-if="userId!==''">
+          喵喵啊啊
+          </span>
+          <span @click="tologin()" v-else>
+           登陆/注册
+          </span>
 
         <img src="./设置.png" @click="toset()" class="fr" />
         <img src="./消息.png" @click="tomassage()" class="fr" />
@@ -90,11 +95,12 @@ export default {
         { label: '地址管理', icon: 'Group', router: 'addressList' },
         { label: '拼团商城', icon: '编组1', router: 'pintuan' },
         { label: '招募代理', icon: '编组2', router: 'myshop' },
-        { label: '领券中心', icon: '编组3', router: 'myshop' },
+        { label: '领券中心', icon: '编组3', router: 'collectCoupons' },
         { label: '常见问题', icon: '编组4', router: 'collectCoupons' },
         { label: '联系客服', icon: '编组5', router: 'collectCoupons' },
         { label: '成为商家', icon: '编组6', router: 'becomemar' }
-      ]
+      ],
+      userId: ''
     }
   },
   props: {},
@@ -134,6 +140,9 @@ export default {
     },
     toset () {
       this.$router.push('./set')
+    },
+    tologin () {
+      this.$router.push('./login')
     }
   }
 }

@@ -4,19 +4,13 @@
     <h2>注册</h2>
     <group>
       <x-input placeholder="请输入手机号码">
-        <img
-          slot="right-full-height"
-          src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg"
-        />
+        <img slot="right-full-height" src="./删除.png" />
       </x-input>
       <x-input class="weui-vcode" placeholder="输入短信验证码">
         <button slot="right" class="button">获取动态码</button>
       </x-input>
       <x-input placeholder="请输入手机号码">
-        <img
-          slot="right-full-height"
-          src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg"
-        />
+        <img slot="right-full-height" src="./删除.png" />
       </x-input>
     </group>
     <div class="gcs-checkbox">
@@ -26,8 +20,8 @@
         <span>《妃立宝服务条款》</span>
       </p>
 
-      <big-anniu :title="anniu" :icon="img"></big-anniu>
-      <div class="center">账号密码登录</div>
+      <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
+      <div class="center" @click="mimalogin()">账号密码登录</div>
     </div>
   </div>
 </template>
@@ -53,7 +47,14 @@ export default {
   },
   props: {},
   computed: {},
-  methods: {}
+  methods: {
+    mimalogin () {
+      this.$router.push('/mimalogin')
+    },
+    orderhome () {
+      this.$router.push('/orderhome')
+    }
+  }
 }
 </script>
 
@@ -80,28 +81,30 @@ export default {
     text-align: center;
     font-size: 0.82rem;
     color: #1987ff;
-   
   }
-  .gcs-checkbox{
-font-size: 0.82rem;
-margin-top:1rem;
-margin-left: 1.5rem;
-input{
-  width: 1.1rem;
-  height: 1.1rem;
-  border: #FF90A5;
-  background-color: #FFF2F4;
+  .gcs-checkbox {
+    font-size: 0.82rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    input {
+      width: 1.1rem;
+      height: 1.1rem;
+      border: #ff90a5;
+      background-color: #fff2f4;
       float: left;
-    margin-right: 1rem;
-}
-}
-span{
-  color:#FF2851; 
-  line-height: 1.1rem;
-}
-
+      margin-right: 1rem;
+    }
   }
-
-
-
+  span {
+    color: #ff2851;
+    line-height: 1.1rem;
+  }
+  .vux-x-input-right-full {
+    line-height: 3.3rem;
+    img {
+      height: 1.3rem;
+      margin-right: 1rem;
+    }
+  }
+}
 </style>

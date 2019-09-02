@@ -8,7 +8,7 @@
       </x-input>
     </group>
 
-    <big-anniu :title="anniu" :icon="img"></big-anniu>
+    <big-anniu :title="anniu" @click.native="setsuccess()"></big-anniu>
   </div>
 </template>
 
@@ -32,7 +32,11 @@ export default {
   },
   props: {},
   computed: {},
-  methods: {}
+  methods: {
+    setsuccess () {
+      this.$router.push('/setsuccess')
+    }
+  }
 }
 </script>
 

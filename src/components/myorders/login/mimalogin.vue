@@ -6,15 +6,19 @@
       <x-input placeholder="请输入手机号码">
         <img
           slot="right-full-height"
-          src="https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg"
+          src="./删除.png"
         />
       </x-input>
       <x-input class="weui-vcode" placeholder="输入密码">
       </x-input>
     </group>
     <span class="fr">忘记密码？</span>
-    <big-anniu :title="anniu" :icon="img"></big-anniu>
-    <div class="center">账号密码登录 丨 新用户注册</div>
+    <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
+    <div class="center">
+    <span @click="login()">验证码登录</span>
+      丨
+      <span @click="zhuce()">新用户注册</span>
+      </div>
     <div style="position:fixed; bottom:0rem; left:0rem; width:100vw;">
  
     <div class="border">
@@ -60,7 +64,17 @@ export default {
   },
   props: {},
   computed: {},
-  methods: {}
+  methods: {
+    login () {
+      this.$router.push('/login')
+    },
+    zhuce () {
+      this.$router.push('/zhuce')
+    },
+    orderhome () {
+      this.$router.push('/orderhome')
+    }
+  }
 }
 </script>
 
@@ -114,6 +128,13 @@ export default {
   }
   .weui-grids:before{
     border:none;
+  }
+   .vux-x-input-right-full {
+    line-height: 3.3rem;
+    img {
+      height: 1.3rem;
+      margin-right: 1rem;
+    }
   }
 }
 </style>
