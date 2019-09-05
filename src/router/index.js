@@ -42,6 +42,10 @@ import setpassword from '@/components/myorders/login/setpassword'
 import setsuccess from '@/components/myorders/login/setsuccess'
 import myCoupons from '@/components/myorders/coupons/myCoupons'
 import myCollect from '@/components/myorders/personal/myCollect'
+import myAccounts from '@/components/myorders/personal/myAccounts'
+import recharge from '@/components/myorders/personal/recharge'
+import cashOut from '@/components/myorders/personal/cashOut'
+import payfor from '@/components/myorders/personal/payfor'
 
 Vue.use(Router)
 
@@ -266,6 +270,26 @@ export default new Router({
       path: '/myCollect',
       name: 'myCollect',
       component: myCollect
+    },
+    {
+      path: '/myAccounts',
+      name: 'myAccounts',
+      component: myAccounts
+    },
+    {
+      path: '/recharge',
+      name: 'recharge',
+      component: recharge
+    },
+    {
+      path: '/cashOut',
+      name: 'cashOut',
+      component: cashOut
+    },
+    {
+      path: '/payfor',
+      name: 'payfor',
+      component: payfor
     }
 
   ]

@@ -8,7 +8,7 @@
         :neir="neir"
         style="float:left;margin-top: 1.75rem;margin-left:0.5rem;"
       ></search-for>
-          <img src="./形状.png" style="margin-top: 2.25rem;
+          <img src="@/assets/home/index/形状.png" style="margin-top: 2.25rem;
     margin-left: 0.7rem;" />
     </div>
   
@@ -195,15 +195,15 @@ import searchFor from './demo1/search'
 const baseList = [
   {
     url: 'javascript:',
-    img: require('./位图.png')
+    img: require('@/assets/home/index/位图.png')
   },
   {
     url: 'javascript:',
-    img: require('./位图.png')
+    img: require('@/assets/home/index/位图.png')
   },
   {
     url: 'javascript:',
-    img: require('./位图.png'),
+    img: require('@/assets/home/index/位图.png'),
     fallbackImg:
       'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw50iwj20ff0aaaci.jpg' // 它将在 img 加载失败时显示，注意的是 fallbackImg 可能会在 img 加载成功时也进行了加载，只是不会显示（取决于浏览器实现）
   }
@@ -368,7 +368,7 @@ export default {
 .home{
   background-color: #F7F5F5;
   .shous{
-      background: url(../../assets/home/形状结合.png) no-repeat center;
+      background: url(../../assets/home/index/形状结合.png) no-repeat center;
       width: 100vw;
       height: 10.6rem;
   }

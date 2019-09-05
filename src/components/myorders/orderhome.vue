@@ -7,7 +7,7 @@
           喵喵啊啊
           </span>
           <span @click="tologin()" v-else>
-           登陆/注册
+           登录/注册
           </span>
 
         <img src="./设置.png" @click="toset()" class="fr" />
@@ -40,7 +40,7 @@
           :label="item.label"
           v-for="(item ,key) in list1"
           :key="key"
-          @click.native="getlist(item.icon)"
+          @click.native="getlist(item.index)"
         >
           <img slot="icon" :src="geticon(item.icon)" />
         </grid-item>
@@ -84,11 +84,11 @@ export default {
         { shu: 0, zi: '优惠券', router: 'collectCoupons' }
       ],
       list1: [
-        { label: '待付款', icon: '形状' },
-        { label: '待发货', icon: '形状2' },
-        { label: '待收货', icon: '形状3' },
-        { label: '评价', icon: '形状4' },
-        { label: '退换', icon: '桃心' }
+        { label: '待付款', icon: '形状', index: 1 },
+        { label: '待发货', icon: '形状2', index: 2 },
+        { label: '待收货', icon: '形状3', index: 3 },
+        { label: '评价', icon: '形状4', index: 4 },
+        { label: '退换', icon: '桃心', index: 0 }
       ],
       list2: [
         { label: '邀请好友', icon: '编组', router: 'collectCoupons' },
@@ -123,7 +123,7 @@ export default {
     getlist (a) {
       this.$router.push({
         path: '/order',
-        query: { from: this.$route.query.index }
+        query: { from: this.$route.query.index, key: a }
       })
     },
     topersonalData (a) {

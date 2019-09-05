@@ -1,6 +1,6 @@
 <template>
   <div>
-    <tabGroup :title="title" :ab="ab"></tabGroup>
+    <tabGroup :title="title" ></tabGroup>
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
     </tab>
@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       list: ['全部', '待付款', '待发货', '待收货', '待评价'],
-      n: 0,
+      n: this.$route.query.key || 0,
       title: '我的订单',
       a: false
     }
@@ -43,6 +43,7 @@ export default {
       this.$router.push({path: '/', query: {index: this.$route.query.from}})
     }
   }
+
 }
 </script>
 

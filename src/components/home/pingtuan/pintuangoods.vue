@@ -135,7 +135,7 @@
         </span>
           </div>
         <div class="fl" style="font-size:0.75rem;">¥380<br/>单独购买</div>
-        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;">¥258<br/>2人团</div>
+        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;" @click="pindetial()">¥258<br/>2人团</div>
       </div>
     </div>
   </div>
@@ -181,6 +181,9 @@ export default {
   methods: {
     topingjia () {
       this.$router.push('./pingjia')
+    },
+    pindetial () {
+      this.$router.push('./pindetial')
     }
   }
 }

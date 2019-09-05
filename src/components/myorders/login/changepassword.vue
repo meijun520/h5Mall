@@ -4,14 +4,11 @@
     <h2>重置密码</h2>
     <group>
       <x-input placeholder="请输入手机号码">
-        <img
-          slot="right-full-height"
-          src="./删除.png" 
-        />
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码">
+      <x-input class="weui-vcode" placeholder="输入短信验证码" >
         <button slot="right" class="button">60s</button>
       </x-input>
+      
     </group>
 
     <big-anniu :title="anniu" @click.native="setpassword()"></big-anniu>
@@ -65,14 +62,6 @@ border-radius:0.91rem;
 color: #C1C1C1;
 border: none;
   }
-   .vux-x-input-right-full {
-    line-height: 3.3rem;
-    img {
-      height: 1.3rem;
-      margin-right: 1rem;
-    }
-  }
-
 
 }
 </style>

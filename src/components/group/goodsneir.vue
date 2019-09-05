@@ -130,7 +130,7 @@
           </span>
           </div>
         <div class="fl" style="font-size:0.75rem;background:#FF8721; color:#FFFFFF; ">¥380<br/>加入购物车</div>
-        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;">立即购买</div>
+        <div class="fl" style="background:#FF224B; color:#FFFFFF; font-size:0.75rem;" @click="dingdan()">立即购买</div>
       </div>
     </div>
   </div>
@@ -180,6 +180,9 @@ export default {
   methods: {
     topingjia () {
       this.$router.push('./pingjia')
+    },
+    dingdan () {
+      this.$router.push('./dingdan')
     }
   }
 }

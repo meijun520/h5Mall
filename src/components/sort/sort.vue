@@ -1,5 +1,5 @@
 <template>
-  <div class="fenlei">
+  <div class="sort">
     <search-for :neir="neir"></search-for>
     <div class="div">
       <div class="fl">
@@ -89,7 +89,7 @@ export default {
     //   return require('./img/' + icon + '.png')
     // },
     getzhu () {
-      return require('./img/zhu.png')
+      return require('@/assets/sort/主图.png')
     },
     producttype () {
       this.$http.get('ferrobag-server/productType/all').then(res => {
@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fenlei{
+.sort{
 .search {
     margin-top: 1.69rem;
     width: 95vw;

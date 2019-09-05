@@ -6,7 +6,7 @@
     
     </div>
     <div v-show="showIndex===1">
-    <fen-lei></fen-lei>
+    <sort-page></sort-page>
     </div>
     <div v-show="showIndex===2">
       <cart-detial></cart-detial >
@@ -19,11 +19,10 @@
         <img slot="icon" :src="homeicon">
         <span slot="label">首页</span>
       </tabbar-item>
-      
-      <tabbar-item >
+        <tabbar-item>   
         <img slot="icon" :src="sorticon">
         <span slot="label">分类</span>
-      </tabbar-item>
+         </tabbar-item>
       <tabbar-item>
         <img slot="icon" :src="cart">
         <span slot="label">购物车</span>
@@ -39,14 +38,14 @@
 
 <script>
 import { Tabbar, TabbarItem, Cell } from 'vux'
-import fenLei from './sort/fenlei'
+import sortPage from './sort/sort'
 import cartDetial from './cart/cartdetial'
 import indexPage from './home/index'
 import orderHome from './myorders/orderhome'
 export default {
   components: {
     cartDetial: cartDetial,
-    fenLei: fenLei,
+    sortPage: sortPage,
     indexPage: indexPage,
     Tabbar,
     TabbarItem,
