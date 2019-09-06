@@ -29,7 +29,7 @@
  ¥50
     </span>
   <an-niu :title="queren" style="float:right;margin-top: 0.5rem;
-    margin-right: 1.5rem;" @click.native="fukuan()"></an-niu>
+    margin-right: 1.5rem;" @click.native="payfor()"></an-niu>
   </div>
 
   </div>
@@ -66,8 +66,8 @@ export default {
     toset () {
       this.$router.push('./addressList')
     },
-    fukuan () {
-      this.$router.push('./payfinish')
+    payfor () {
+      this.$router.push('./payfor')
     }
   }
 }

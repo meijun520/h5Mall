@@ -152,7 +152,8 @@ export default {
 * {
   touch-action: pan-y;
 }
-.weui-btn_warn {
+.cart{
+  .weui-btn_warn {
   background-image: linear-gradient(to right, #ff214c, #ff4f71);
   border-radius: 1.125rem;
 }
@@ -205,4 +206,7 @@ export default {
   color: #d2d2d2;
   padding-top: 4rem;
 }
+
+}
+
 </style>

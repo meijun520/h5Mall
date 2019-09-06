@@ -1,6 +1,6 @@
 <template>
   <div class="sort">
-    <search-for :neir="neir"></search-for>
+    <search-for :neir="neir"  @click.native="tosearch()"></search-for>
     <div class="div">
       <div class="fl">
         <div
@@ -18,7 +18,7 @@
         <div class="a">分类推荐</div>
         <flexbox :gutter="0" wrap="wrap">
           <!-- 使用vux组件 -->
-          <flexbox-item :span="1/3" v-for="(item,key) in shuz.children" :key="key">
+          <flexbox-item :span="1/3" v-for="(item,key) in shuz.children" :key="key" @click.native="sortSearch()">
             <div class="flex-demo" >
                 <img  :src="item.level" class="img" />
                 <span class="typename">
@@ -96,6 +96,12 @@ export default {
         console.log()
         this.list = res.data.data
       })
+    },
+    tosearch () {
+      this.$router.push('./searchfor')
+    },
+    sortSearch () {
+      this.$router.push('./sortSearch')
     }
   }
 }

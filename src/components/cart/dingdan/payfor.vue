@@ -29,7 +29,7 @@ export default {
       title: '支付',
       radio003: [
         {
-          icon: require('@/components/cart/dingdan/微信支付.png'),
+          icon: require('@/components/cart/dingdan/余额.png'),
           key: '001',
           value: '余额支付'
         },

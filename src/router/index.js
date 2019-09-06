@@ -45,7 +45,10 @@ import myCollect from '@/components/myorders/personal/myCollect'
 import myAccounts from '@/components/myorders/personal/myAccounts'
 import recharge from '@/components/myorders/personal/recharge'
 import cashOut from '@/components/myorders/personal/cashOut'
-import payfor from '@/components/myorders/personal/payfor'
+import payfor from '@/components/cart/dingdan/payfor'
+import myPoints from '@/components/myorders/personal/myPoints'
+import commonProblem from '@/components/myorders/coupons/commonProblem'
+import sortSearch from '@/components/sort/sortSearch'
 
 Vue.use(Router)
 
@@ -290,6 +293,21 @@ export default new Router({
       path: '/payfor',
       name: 'payfor',
       component: payfor
+    },
+    {
+      path: '/myPoints',
+      name: 'myPoints',
+      component: myPoints
+    },
+    {
+      path: '/commonProblem',
+      name: 'commonProblem',
+      component: commonProblem
+    },
+    {
+      path: '/sortSearch',
+      name: 'sortSearch',
+      component: sortSearch
     }
 
   ]

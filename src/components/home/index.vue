@@ -9,13 +9,13 @@
         style="float:left;margin-top: 1.75rem;margin-left:0.5rem;"
       ></search-for>
           <img src="@/assets/home/index/形状.png" style="margin-top: 2.25rem;
-    margin-left: 0.7rem;" />
+    margin-left: 0.7rem;" @click="tomassage()" />
     </div>
   
 
     <div class="home-index">
       <div>
-        <swiper :list="demo06_list" auto style="width:100%;margin:0 auto;" height="180px"  dots-position="center" @click.native="goodsneir ()"></swiper>
+        <swiper :list="demo06_list" auto style="width:100%;margin:0 auto;" height="180px"  dots-position="center"></swiper>
       </div>
       <div class="div1">
         <div class="item-head">
@@ -348,6 +348,9 @@ export default {
     },
     huiyuan () {
       this.$router.push('./addhui')
+    },
+    tomassage () {
+      this.$router.push('./dealMassage')
     }
 
     // picture (key) {
