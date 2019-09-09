@@ -43,8 +43,8 @@
         <input type="text" class="input" placeholder="最低价" />--
         <input type="text" class="input" placeholder="最高价"/>
         <div style="position:fixed; bottom:1.5rem; right:0.875rem">
-          <button class="bl">重置</button>
-          <button class="br">确定</button>
+          <button class="bl" @click="backto()">重置</button>
+          <button class="br" @click="backto()">确定</button>
         </div>
       </div>
     </div>
@@ -88,6 +88,9 @@ export default {
     },
     back () {
       history.go(-1)
+    },
+    backto () {
+      this.show = ''
     }
   }
 }

@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="order">
     <tabGroup :title="title" ></tabGroup>
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
     </tab>
-    <order-parts v-if="a"></order-parts>
+    <order-parts v-if="a" :title1="title1" :title2="title2" :buy="buy"></order-parts>
       <div v-else class="b">
        <img src="./订单.png" >
        <p>
@@ -32,7 +32,10 @@ export default {
       list: ['全部', '待付款', '待发货', '待收货', '待评价'],
       n: this.$route.query.key || 0,
       title: '我的订单',
-      a: false
+      a: true,
+      title1: '官方旗舰店',
+      title2: '卖家已发货',
+      buy: true
     }
   },
   props: {},
@@ -48,7 +51,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.left-arrow {
+.order{
+  .left-arrow {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -61,4 +65,10 @@ export default {
     padding-top:4rem;
     background-color: #ffffff;
   }
+  .vux-tab-wrap {
+    padding-top: 1.81rem;
+}
+
+}
+
 </style>

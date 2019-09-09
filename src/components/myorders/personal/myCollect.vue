@@ -59,7 +59,7 @@ export default {
       ],
       title: '我的收藏',
       ab: '管理',
-      a: true,
+      a: false,
       b: '删除',
       c: true,
       allcheck: false,
