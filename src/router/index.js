@@ -49,6 +49,7 @@ import payfor from '@/components/cart/dingdan/payfor'
 import myPoints from '@/components/myorders/personal/myPoints'
 import commonProblem from '@/components/myorders/coupons/commonProblem'
 import sortSearch from '@/components/sort/sortSearch'
+import selection from '@/components/myorders/myshop/selection'
 
 Vue.use(Router)
 
@@ -308,6 +309,11 @@ export default new Router({
       path: '/sortSearch',
       name: 'sortSearch',
       component: sortSearch
+    },
+    {
+      path: '/selection',
+      name: 'selection',
+      component: selection
     }
 
   ]

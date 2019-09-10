@@ -32,7 +32,10 @@
       <x-button mini type="warn">去付款</x-button>
       <x-button mini type="warn" @click.native="toassess()">去评价</x-button>
     </div>
-    <div></div>
+    <div v-else style="margin-top:0.5rem;">
+      <span class="sx fl">订单编号：7697900000788 </span>
+      <span class="sx fr">创建时间：2018.09.08 12:08:34</span>
+    </div>
   </div>
 </template>
 
@@ -87,6 +90,12 @@ export default {
   .sx {
     color: #999999;
     font-size: 0.6875rem;
+  }
+  .fr{
+    float: right;
+  }
+  .fl{
+    float: left;
   }
   padding: 1rem;
   height: 14rem;

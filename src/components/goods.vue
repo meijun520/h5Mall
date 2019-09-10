@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <button @click="addcart()">
+      <button @click="addcart()" v-show="shop">
         <img :src="che" />&nbsp;去进货
       </button>
     </div>
@@ -59,6 +59,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    shop: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data () {

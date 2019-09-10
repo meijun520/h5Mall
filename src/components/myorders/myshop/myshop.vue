@@ -29,6 +29,7 @@
         :b="b"
         :a="a"
         @add="addto()"
+        :shop="shop"
       ></pai-lie>
       <div v-transfer-dom>
         <confirm
@@ -37,7 +38,7 @@
           title="输入进货数量"
           :input-attrs="{type: 'number'}"
           @on-cancel="onCancel"
-          @on-show="onShow5"
+          @on-confirm="onConfirm"
         ></confirm>
       </div>
     </div>
@@ -99,8 +100,9 @@ export default {
       b: true,
       a: false,
       show3: false,
-      show: false,
-      showindex: 0
+      show: true,
+      showindex: 0,
+      shop: true
     }
   },
   props: {},

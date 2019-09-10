@@ -12,8 +12,8 @@ export default {
   },
   data () {
     return {
-      title1: '官方旗舰店',
-      title2: '卖家已发货',
+      title1: '买家昵称 : 小龙女的小孔庙',
+      title2: '已完成',
       buy: false
     }
   },
@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.shopOrder{
- 
 
-}
 
 </style>
