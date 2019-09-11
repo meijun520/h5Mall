@@ -3,13 +3,19 @@
     <tabGroup></tabGroup>
     <h2>密码登录</h2>
     <group>
-      <x-input placeholder="请输入手机号码">
+      <x-input placeholder="请输入手机号码" v-model="phone">
         <img
           slot="right-full-height"
           src="./删除.png"
+          @click="clear()"
         />
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入密码">
+      <x-input class="weui-vcode" placeholder="输入密码" v-model="password" type="password">
+           <img
+          slot="right-full-height"
+          src="./删除.png"
+          @click="clear1()"
+        />
       </x-input>
     </group>
     <span class="fr">忘记密码？</span>
@@ -59,7 +65,9 @@ export default {
   data () {
     return {
       anniu: '登录',
-      line: '请选择授权登录方式'
+      line: '请选择授权登录方式',
+      phone: '',
+      password: ''
     }
   },
   props: {},
@@ -76,6 +84,12 @@ export default {
         path: '/',
         query: { from: this.$route.query.index }
       })
+    },
+    clear () {
+      this.phone = ''
+    },
+    clear1 () {
+      this.password = ''
     }
   }
 }

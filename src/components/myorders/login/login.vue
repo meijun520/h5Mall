@@ -3,10 +3,10 @@
     <tabGroup></tabGroup>
     <h2>登录</h2>
     <group>
-      <x-input placeholder="请输入手机号码" keyboard="number" is-type="china-mobile" name="mobile" >
-        <!-- <img slot="right-full-height" src="./删除.png" @click="clear()"/> -->
+      <x-input placeholder="请输入手机号码" v-model="phone">
+        <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码">
+      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
         <button slot="right" class="button">获取动态码</button>
       </x-input>
     </group>
@@ -56,7 +56,8 @@ export default {
         { label: 'QQ', src: 'qq', router: '' },
         { label: '微博', src: '微博', router: '' },
         { label: '短信登录', src: '短信', router: '' }
-      ]
+      ],
+      phone: ''
     }
   },
   props: {},
@@ -82,6 +83,9 @@ export default {
         path: '/',
         query: { index: this.$route.query.from }
       })
+    },
+    clear () {
+      this.phone = ''
     }
   }
 }
@@ -137,12 +141,12 @@ export default {
   .weui-grids:before {
     border: none;
   }
-  // .vux-x-input-right-full {
-  //   line-height: 3.3rem;
-  //   img {
-  //     height: 1.3rem;
-  //     margin-right: 1rem;
-  //   }
-  // }
+  .vux-x-input-right-full {
+    line-height: 3.3rem;
+    img {
+      height: 1.3rem;
+      margin-right: 1rem;
+    }
+  }
 }
 </style>

@@ -4,7 +4,8 @@
     <h2>设置密码</h2>
     <group>
    
-      <x-input class="weui-vcode" placeholder="请输入新密码">
+      <x-input class="weui-vcode" placeholder="请输入新密码" v-model="phone" type="password">
+        <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
     </group>
 
@@ -27,7 +28,8 @@ export default {
   },
   data () {
     return {
-      anniu: '下一步'
+      anniu: '下一步',
+      phone: ''
     }
   },
   props: {},
@@ -35,6 +37,9 @@ export default {
   methods: {
     setsuccess () {
       this.$router.push('/setsuccess')
+    },
+    clear () {
+      this.phone = ''
     }
   }
 }

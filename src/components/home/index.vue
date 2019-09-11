@@ -20,7 +20,7 @@
       <div class="div1">
         <div class="item-head">
           <span>洗涤产品</span>
-          <p class="right">
+          <p class="right" @click="sortSearch()">
             查看更多
             <img :src="moreicon" />
           </p>
@@ -86,7 +86,7 @@
       <div class="div5">
         <div class="item-head">
           <span>会员专区</span>
-          <p class="right">
+          <p class="right" @click="sortSearch()">
             查看全部
             <img :src="moreicon" />
           </p>
@@ -351,6 +351,9 @@ export default {
     },
     tomassage () {
       this.$router.push('./dealMassage')
+    },
+    sortSearch () {
+      this.$router.push('./sortSearch')
     }
 
     // picture (key) {

@@ -3,14 +3,11 @@
     <tabGroup></tabGroup>
     <h2>注册</h2>
     <group>
-      <x-input placeholder="请输入手机号码">
-        <img slot="right-full-height" src="./删除.png" />
+      <x-input placeholder="请输入手机号码" v-model="phone">
+        <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码">
+      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
         <button slot="right" class="button">获取动态码</button>
-      </x-input>
-      <x-input placeholder="请输入手机号码">
-        <img slot="right-full-height" src="./删除.png" />
       </x-input>
     </group>
     <div class="gcs-checkbox">
@@ -19,7 +16,6 @@
         继续注册表示同意并同意
         <span>《妃立宝服务条款》</span>
       </p>
-
       <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
       <div class="center" @click="mimalogin()">账号密码登录</div>
     </div>
@@ -42,7 +38,8 @@ export default {
   data () {
     return {
       anniu: '登录',
-      line: '请选择授权登录方式'
+      line: '请选择授权登录方式',
+      phone: ''
     }
   },
   props: {},
@@ -53,6 +50,9 @@ export default {
     },
     orderhome () {
       this.$router.push('/orderhome')
+    },
+    clear () {
+      this.phone = ''
     }
   }
 }

@@ -3,9 +3,10 @@
     <tabGroup></tabGroup>
     <h2>重置密码</h2>
     <group>
-      <x-input placeholder="请输入手机号码">
+      <x-input placeholder="请输入手机号码" v-model="phone">
+          <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码" >
+      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
         <button slot="right" class="button">60s</button>
       </x-input>
       
@@ -30,7 +31,8 @@ export default {
   },
   data () {
     return {
-      anniu: '下一步'
+      anniu: '下一步',
+      phone: ''
     }
   },
   props: {},
@@ -38,6 +40,9 @@ export default {
   methods: {
     setpassword () {
       this.$router.push('/setpassword')
+    },
+    clear () {
+      this.phone = ''
     }
   }
 }
@@ -61,6 +66,13 @@ background:rgba(242,242,242,1);
 border-radius:0.91rem;
 color: #C1C1C1;
 border: none;
+  }
+  .vux-x-input-right-full {
+    line-height: 3.3rem;
+    img {
+      height: 1.3rem;
+      margin-right: 1rem;
+    }
   }
 
 }

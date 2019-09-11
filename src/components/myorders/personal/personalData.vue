@@ -1,6 +1,6 @@
 <template>
   <div class="personalData">
-    <tabGroup :title="title" :ab="ab"></tabGroup>
+    <tabGroup :title="title"></tabGroup>
      <group class="group1">
        <cell title="头像"  is-link>
        <img src="./6.png" alt="">
@@ -9,20 +9,19 @@
          <cell title="性别" value="女" is-link></cell>
      </group>
      <group class="group2">
-       <cell title="更换手机号"   :link='{path:"/changepassword"}'></cell>
-        <cell title="修改密码"  is-link></cell>
-        
+       <cell title="更换手机号"  is-link ></cell>
+        <cell title="修改密码"   :link='{path:"/changepassword"}'></cell>  
      </group>
-      <group class="group2">
+      <!-- <group class="group2">
        <cell title="社区账号绑定"  is-link></cell>
         <cell title="感兴趣类别"  is-link>
           <span class="lb">口红</span>
           <span class="lb">腮红</span>
-        </cell>
-        
-     </group>
-
+        </cell>  
+     </group>    -->
+     <div>
     
+     </div>
   </div>
 </template>
 

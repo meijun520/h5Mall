@@ -10,52 +10,50 @@
       </div>
       <x-icon type="ios-search" size="25"></x-icon>
       <input type="search" placeholder="搜索" />
-      <tab >
-        <tab-item  v-for="(item,key) in tabList" :key="key" @click.native="handler(key)">{{item}}</tab-item>
+      <tab>
+        <tab-item v-for="(item,key) in tabList" :key="key" @click.native="handler(key)">{{item}}</tab-item>
       </tab>
     </div>
     <div v-show="showindex===0">
       <div v-if="show">
-      <pai-lie
-        v-for="(item,key) in list"
-        :key="key"
-        style="float:left"
-        :imgurl="item.img"
-        :title="item.name"
-        :cost="item.cost"
-        :border="false"
-        class="pai"
-        :che="src"
-        :b="b"
-        :a="a"
-        @add="addto()"
-        :shop="shop"
-      ></pai-lie>
-      <div v-transfer-dom>
-        <confirm
-          v-model="show3"
-          show-input
-          title="输入进货数量"
-          :input-attrs="{type: 'number'}"
-          @on-cancel="onCancel"
-          @on-confirm="onConfirm"
-        ></confirm>
+        <pai-lie
+          v-for="(item,key) in list"
+          :key="key"
+          style="float:left"
+          :imgurl="item.img"
+          :title="item.name"
+          :cost="item.cost"
+          :border="false"
+          class="pai"
+          :che="src"
+          :b="b"
+          :a="a"
+          @add="addto()"
+          :shop="shop"
+        ></pai-lie>
+        <div v-transfer-dom>
+          <confirm
+            v-model="show3"
+            show-input
+            title="输入进货数量"
+            :input-attrs="{type: 'number'}"
+            @on-cancel="onCancel"
+            @on-confirm="onConfirm"
+          ></confirm>
+        </div>
+      </div>
+      <div v-else class="b">
+        <img src="./空铺.png" />
+        <p>您的店铺空空如也…</p>
+        <button class="button">去进货</button>
       </div>
     </div>
-    <div v-else class="b">
-      <img src="./空铺.png" />
-      <p>您的店铺空空如也…</p>
-      <button class="button">去进货</button>
+    <div v-show="showindex===2">
+      <shop-message></shop-message>
     </div>
-
+    <div v-show="showindex===1">
+      <shop-order></shop-order>
     </div>
-    <div  v-show="showindex===2">
-<shop-message></shop-message>
-    </div>
-    <div  v-show="showindex===1">
-<shop-order></shop-order>
-    </div>
-    
   </div>
 </template>
 
@@ -88,9 +86,7 @@ export default {
     return {
       title: '我的小店',
       icon: require('./分享.png'),
-      tabList: [
-        '商品', '订单', '信息'
-      ],
+      tabList: ['商品', '订单', '信息'],
       list: [
         { name: '1', img: '', cost: '1', count: 1 },
         { name: '1', img: '', cost: '2', count: 2 },
