@@ -1,5 +1,5 @@
 <template>
-  <div class="zhuce">
+  <div class="register">
     <tabGroup></tabGroup>
     <h2>注册</h2>
     <group>
@@ -17,7 +17,7 @@
         <span>《妃立宝服务条款》</span>
       </p>
       <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
-      <div class="center" @click="mimalogin()">账号密码登录</div>
+      <div class="center" @click="login()">账号密码登录</div>
     </div>
   </div>
 </template>
@@ -45,8 +45,8 @@ export default {
   props: {},
   computed: {},
   methods: {
-    mimalogin () {
-      this.$router.push('/mimalogin')
+    login () {
+      this.$router.push('/login')
     },
     orderhome () {
       this.$router.push('/orderhome')
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.zhuce {
+.register {
   background: #ffffff;
   height: 100vh;
   .tab {

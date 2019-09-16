@@ -3,53 +3,53 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloFromVux'
 import searchfor from '@/components/home/demo1/searchfor'
 import pailie from '@/components/pailie'
-import assess from '@/components/myorders/myorder/assess'
-import collectCoupons from '@/components/myorders/coupons/collectCoupons'
-import order from '@/components/myorders/myorder/order'
-import orderhome from '@/components/myorders/orderhome'
+import assess from '@/components/mine/myorder/assess'
+import collectCoupons from '@/components/mine/coupons/collectCoupons'
+import order from '@/components/mine/myorder/order'
+import orderhome from '@/components/mine/orderhome'
 import pindetial from '@/components/home/pingtuan/pindetial'
-import orderdetial from '@/components/myorders/myorder/orderdetial'
+import orderdetial from '@/components/mine/myorder/orderdetial'
 import pintuan from '@/components/home/pingtuan/pintuan'
 import xsqiangou from '@/components/home/qiangou/xsqiangou'
-import personalData from '@/components/myorders/personal/personalData'
+import personalData from '@/components/mine/personal/personalData'
 import pintuangoods from '@/components/home/pingtuan/pintuangoods'
-import massage from '@/components/myorders/massage/massage'
-import systemMassage from '@/components/myorders/massage/systemMassage'
-import dealMassage from '@/components/myorders/massage/dealMassage'
+import massage from '@/components/mine/massage/massage'
+import systemMassage from '@/components/mine/massage/systemMassage'
+import dealMassage from '@/components/mine/massage/dealMassage'
 import dingDan from '@/components/cart/dingdan/dingdan'
 import adress from '@/components/cart/adress/adress'
 import newadress from '@/components/cart/adress/newadress'
-import addhui from '@/components/myorders/huiyuan/addhui'
-import set from '@/components/myorders/setting/set'
-import view from '@/components/myorders/setting/view'
-import aboutus from '@/components/myorders/setting/aboutus'
-import becomemar from '@/components/myorders/coupons/becomemar'
+import addhui from '@/components/mine/huiyuan/addhui'
+import set from '@/components/mine/setting/set'
+import view from '@/components/mine/setting/view'
+import aboutus from '@/components/mine/setting/aboutus'
+import becomemar from '@/components/mine/coupons/becomemar'
 import fukuan from '@/components/cart/dingdan/fukuan'
 import payfinish from '@/components/cart/dingdan/payfinish'
 import goodsneir from '@/components/group/goodsneir'
 import pingjia from '@/components/group/pingjia'
-import logistics from '@/components/myorders/myorder/logistics'
-import coupons from '@/components/myorders/coupons/coupons'
-import myshop from '@/components/myorders/myshop/myshop'
-import weiixnlogin from '@/components/myorders/login/weixinlogin'
-import setphone from '@/components/myorders/login/setphone'
-import bindsuccess from '@/components/myorders/login/bindsuccess'
-import login from '@/components/myorders/login/login'
-import mimalogin from '@/components/myorders/login/mimalogin'
-import zhuce from '@/components/myorders/login/zhuce'
-import changepassword from '@/components/myorders/login/changepassword'
-import setpassword from '@/components/myorders/login/setpassword'
-import setsuccess from '@/components/myorders/login/setsuccess'
-import myCoupons from '@/components/myorders/coupons/myCoupons'
-import myCollect from '@/components/myorders/personal/myCollect'
-import myAccounts from '@/components/myorders/personal/myAccounts'
-import recharge from '@/components/myorders/personal/recharge'
-import cashOut from '@/components/myorders/personal/cashOut'
+import logistics from '@/components/mine/myorder/logistics'
+import coupons from '@/components/mine/coupons/coupons'
+import myshop from '@/components/mine/myshop/myshop'
+import weiixnlogin from '@/components/mine/login/weixinlogin'
+import setphone from '@/components/mine/login/setphone'
+import bindsuccess from '@/components/mine/login/bindsuccess'
+import acLogin from '@/components/mine/login/acLogin'
+import login from '@/components/mine/login/login'
+import register from '@/components/mine/login/register'
+import changepassword from '@/components/mine/login/changepassword'
+import setpassword from '@/components/mine/login/setpassword'
+import setsuccess from '@/components/mine/login/setsuccess'
+import myCoupons from '@/components/mine/coupons/myCoupons'
+import myCollect from '@/components/mine/personal/myCollect'
+import myAccounts from '@/components/mine/personal/myAccounts'
+import recharge from '@/components/mine/personal/recharge'
+import cashOut from '@/components/mine/personal/cashOut'
 import payfor from '@/components/cart/dingdan/payfor'
-import myPoints from '@/components/myorders/personal/myPoints'
-import commonProblem from '@/components/myorders/coupons/commonProblem'
+import myPoints from '@/components/mine/personal/myPoints'
+import faq from '@/components/mine/coupons/faq'
 import sortSearch from '@/components/sort/sortSearch'
-import selection from '@/components/myorders/myshop/selection'
+import selection from '@/components/mine/myshop/selection'
 
 Vue.use(Router)
 
@@ -236,19 +236,19 @@ export default new Router({
       component: bindsuccess
     },
     {
+      path: '/acLogin',
+      name: 'acLogin',
+      component: acLogin
+    },
+    {
       path: '/login',
       name: 'login',
       component: login
     },
     {
-      path: '/mimalogin',
-      name: 'mimalogin',
-      component: mimalogin
-    },
-    {
-      path: '/zhuce',
-      name: 'zhuce',
-      component: zhuce
+      path: '/register',
+      name: 'register',
+      component: register
     },
     {
       path: '/changepassword',
@@ -301,9 +301,9 @@ export default new Router({
       component: myPoints
     },
     {
-      path: '/commonProblem',
-      name: 'commonProblem',
-      component: commonProblem
+      path: '/faq',
+      name: 'faq',
+      component: faq
     },
     {
       path: '/sortSearch',

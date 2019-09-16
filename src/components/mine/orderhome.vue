@@ -96,7 +96,7 @@ export default {
         { label: '拼团商城', icon: '编组1', router: 'pintuan' },
         { label: '招募代理', icon: '编组2', router: '' },
         { label: '领券中心', icon: '编组3', router: 'collectCoupons' },
-        { label: '常见问题', icon: '编组4', router: 'commonProblem' },
+        { label: '常见问题', icon: '编组4', router: 'faq' },
         { label: '联系客服', icon: '编组5', router: 'collectCoupons' },
         { label: '成为商家', icon: '编组6', router: 'becomemar' }
       ],

@@ -41,7 +41,7 @@ import { Tabbar, TabbarItem, Cell } from 'vux'
 import sortPage from './sort/sort'
 import cartDetial from './cart/cartdetial'
 import indexPage from './home/index'
-import orderHome from './myorders/orderhome'
+import orderHome from './mine/orderhome'
 export default {
   components: {
     cartDetial: cartDetial,

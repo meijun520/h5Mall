@@ -1,5 +1,5 @@
 <template>
-  <div class="commonProblem">
+  <div class="faq">
     <tabGroup :title="title"></tabGroup>
    <group>
       <cell
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.commonProblem {
+.faq {
 .slide{
     padding: 0.75rem;
 font-size:0.875rem;

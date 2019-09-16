@@ -15,7 +15,7 @@
     <div class="center">
       <span @click="mimalogin()">账号密码登录</span>
       丨
-      <span @click="zhuce()">新用户注册</span>
+      <span @click="register()">新用户注册</span>
     </div>
     <div style="position:fixed; bottom:0rem; left:0rem; width:100vw;">
       <div class="border">
@@ -69,11 +69,11 @@ export default {
     empower (a) {
       this.$router.push('/' + a)
     },
-    mimalogin () {
-      this.$router.push('/mimalogin')
+    login () {
+      this.$router.push('/login')
     },
-    zhuce () {
-      this.$router.push('/zhuce')
+    register () {
+      this.$router.push('/register')
     },
     changepassword () {
       this.$router.push('/changepassword')

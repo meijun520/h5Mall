@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import orderParts from '@/components/myorders/myorder/orderparts'
+import orderParts from '@/components/mine/myorder/orderparts'
 export default {
   components: {
     orderParts: orderParts

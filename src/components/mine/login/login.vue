@@ -1,5 +1,5 @@
 <template>
-  <div class="mimalogin">
+  <div class="login">
     <tabGroup></tabGroup>
     <h2>密码登录</h2>
     <group>
@@ -18,12 +18,12 @@
         />
       </x-input>
     </group>
-    <span class="fr">忘记密码？</span>
+    <span class="fr" @click="changepassword()">忘记密码？</span>
     <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
     <div class="center">
     <span @click="login()">验证码登录</span>
       丨
-      <span @click="zhuce()">新用户注册</span>
+      <span @click="register()">新用户注册</span>
       </div>
     <div style="position:fixed; bottom:0rem; left:0rem; width:100vw;">
  
@@ -74,10 +74,10 @@ export default {
   computed: {},
   methods: {
     login () {
-      this.$router.push('/login')
+      this.$router.push('/acLogin')
     },
-    zhuce () {
-      this.$router.push('/zhuce')
+    register () {
+      this.$router.push('/register')
     },
     orderhome () {
       this.$router.push({
@@ -90,13 +90,16 @@ export default {
     },
     clear1 () {
       this.password = ''
+    },
+    changepassword () {
+      this.$router.push('/changepassword')
     }
   }
 }
 </script>
 
 <style lang="scss" >
-.mimalogin {
+.login {
   background: #ffffff;
   height: 100vh;
   .tab {
