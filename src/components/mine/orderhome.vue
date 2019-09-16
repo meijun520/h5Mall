@@ -1,5 +1,5 @@
 <template>
-  <div class="order">
+  <div class="orderhome">
     <div class="div1">
       <div class="user" style="vertical-align:middle;">
         <img src style="width:3.05rem; height:3.05rem;vertical-align: middle;" />
@@ -80,7 +80,7 @@ export default {
       list: [
         { shu: 0, zi: '收藏', router: 'myCollect' },
         { shu: 0, zi: '账户', router: 'myAccounts' },
-        { shu: 0, zi: '积分', router: 'myPoints' },
+        { shu: 0, zi: '积分', router: 'myScore' },
         { shu: 0, zi: '优惠券', router: 'myCoupons' }
       ],
       list1: [
@@ -93,11 +93,11 @@ export default {
       list2: [
         { label: '邀请好友', icon: '编组', router: '' },
         { label: '地址管理', icon: 'Group', router: 'addressList' },
-        { label: '拼团商城', icon: '编组1', router: 'pintuan' },
+        { label: '拼团商城', icon: '编组1', router: 'groupon' },
         { label: '招募代理', icon: '编组2', router: '' },
-        { label: '领券中心', icon: '编组3', router: 'collectCoupons' },
+        { label: '领券中心', icon: '编组3', router: 'coupon' },
         { label: '常见问题', icon: '编组4', router: 'faq' },
-        { label: '联系客服', icon: '编组5', router: 'collectCoupons' },
+        { label: '联系客服', icon: '编组5', router: '' },
         { label: '成为商家', icon: '编组6', router: 'becomemar' }
       ],
       userId: ''
@@ -122,7 +122,7 @@ export default {
     },
     getlist (a) {
       this.$router.push({
-        path: '/order',
+        path: '/myOrder',
         query: { from: this.$route.query.index, key: a }
       })
     },
@@ -152,7 +152,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.order {
+.orderhome {
   .weui-grid:after {
     border: none;
   }

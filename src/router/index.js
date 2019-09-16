@@ -4,12 +4,12 @@ import HelloWorld from '@/components/HelloFromVux'
 import searchfor from '@/components/home/demo1/searchfor'
 import pailie from '@/components/pailie'
 import assess from '@/components/mine/myorder/assess'
-import collectCoupons from '@/components/mine/coupons/collectCoupons'
-import order from '@/components/mine/myorder/order'
+import coupon from '@/components/mine/coupons/coupon'
+import myOrder from '@/components/mine/myorder/myOrder'
 import orderhome from '@/components/mine/orderhome'
 import pindetial from '@/components/home/pingtuan/pindetial'
 import orderdetial from '@/components/mine/myorder/orderdetial'
-import pintuan from '@/components/home/pingtuan/pintuan'
+import groupon from '@/components/home/pingtuan/groupon'
 import xsqiangou from '@/components/home/qiangou/xsqiangou'
 import personalData from '@/components/mine/personal/personalData'
 import pintuangoods from '@/components/home/pingtuan/pintuangoods'
@@ -29,7 +29,7 @@ import payfinish from '@/components/cart/dingdan/payfinish'
 import goodsneir from '@/components/group/goodsneir'
 import pingjia from '@/components/group/pingjia'
 import logistics from '@/components/mine/myorder/logistics'
-import coupons from '@/components/mine/coupons/coupons'
+import coupongroup from '@/components/mine/coupons/coupongroup'
 import myshop from '@/components/mine/myshop/myshop'
 import weiixnlogin from '@/components/mine/login/weixinlogin'
 import setphone from '@/components/mine/login/setphone'
@@ -44,11 +44,11 @@ import myCoupons from '@/components/mine/coupons/myCoupons'
 import myCollect from '@/components/mine/personal/myCollect'
 import myAccounts from '@/components/mine/personal/myAccounts'
 import recharge from '@/components/mine/personal/recharge'
-import cashOut from '@/components/mine/personal/cashOut'
+import withdraw from '@/components/mine/personal/withdraw'
 import payfor from '@/components/cart/dingdan/payfor'
-import myPoints from '@/components/mine/personal/myPoints'
+import myScore from '@/components/mine/personal/myScore'
 import faq from '@/components/mine/coupons/faq'
-import sortSearch from '@/components/sort/sortSearch'
+import sortSearch from '@/components/search/sortSearch'
 import selection from '@/components/mine/myshop/selection'
 
 Vue.use(Router)
@@ -76,14 +76,14 @@ export default new Router({
       component: assess
     },
     {
-      path: '/collectCoupons',
-      name: 'collectCoupons',
-      component: collectCoupons
+      path: '/coupon',
+      name: 'coupon',
+      component: coupon
     },
     {
-      path: '/order',
-      name: 'order',
-      component: order
+      path: '/myOrder',
+      name: 'myOrder',
+      component: myOrder
     },
     {
       path: '/orderhome',
@@ -101,9 +101,9 @@ export default new Router({
       component: orderdetial
     },
     {
-      path: '/pintuan',
-      name: 'pintuan',
-      component: pintuan
+      path: '/groupon',
+      name: 'groupon',
+      component: groupon
     },
     {
       path: '/xsqiangou',
@@ -211,9 +211,9 @@ export default new Router({
       component: logistics
     },
     {
-      path: '/coupons',
-      name: 'coupons',
-      component: coupons
+      path: '/coupongroup',
+      name: 'coupongroup',
+      component: coupongroup
     },
     {
       path: '/myshop',
@@ -286,9 +286,9 @@ export default new Router({
       component: recharge
     },
     {
-      path: '/cashOut',
-      name: 'cashOut',
-      component: cashOut
+      path: '/withdraw',
+      name: 'withdraw',
+      component: withdraw
     },
     {
       path: '/payfor',
@@ -296,9 +296,9 @@ export default new Router({
       component: payfor
     },
     {
-      path: '/myPoints',
-      name: 'myPoints',
-      component: myPoints
+      path: '/myScore',
+      name: 'myScore',
+      component: myScore
     },
     {
       path: '/faq',

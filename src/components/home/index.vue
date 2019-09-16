@@ -329,7 +329,7 @@ export default {
     //   this.$router.push('/pindetial')
     // },
     topingou () {
-      this.$router.push('./pintuan')
+      this.$router.push('./groupon')
     },
     pintuangoods () {
       this.$router.push('./pintuangoods')

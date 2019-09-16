@@ -5,7 +5,7 @@
       <div class="money">¥130.00</div>
       <div class="word">账户余额</div>
       <div style="padding-top:1.81rem;">
-        <button class="button1" @click="cashOut()">提现</button>
+        <button class="button1" @click="withdraw()">提现</button>
         <button class="button2" @click="recharge()">充值</button>
       </div>
     </div>
@@ -39,12 +39,21 @@ export default {
   },
   props: {},
   computed: {},
+  mounted () {
+    this.getMyDealList()
+  },
   methods: {
     recharge () {
       this.$router.push('./recharge')
     },
-    cashOut () {
-      this.$router.push('./cashOut')
+    withdraw () {
+      this.$router.push('./withdraw')
+    },
+    getMyDealList () {
+      this.$http.get('ferrobag-server/deal/getMyDealList', {params: {pageNum: 1, pageSize: 10, userId: 0
+      }}).then(res => {
+        this.myDealList = res.data.data
+      })
     }
   }
 }

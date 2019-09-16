@@ -47,7 +47,7 @@ export default {
       this.show = true
     },
     onhide () {
-      this.$router.push('/order')
+      this.$router.push('/myOrder')
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="sortSearch">
     <div class="header">
-      <img src="@/assets/sort/返回.png" class="fl img" @click="back()" />
+      <img src="@/assets/search/返回.png" class="fl img" @click="back()" />
       <search-for :neir="neir" @click.native="tosearch()"></search-for>
     </div>
     <div class="header-tab">
@@ -15,7 +15,7 @@
       <div class="quan">
         <p>
           全部
-          <img src="@/assets/sort/打勾.png" style="float:right" />
+          <img src="@/assets/search/打勾.png" style="float:right" />
         </p>
         <div class="word">价格升序</div>
         <div class="word">价格降序</div>
@@ -58,9 +58,9 @@ export default {
     return {
       neir: '输入标题、内容搜索',
       headerList: [
-        { title: '综合', icon: require('@/assets/sort/筛选.png') },
+        { title: '综合', icon: require('@/assets/search/筛选.png') },
         { title: '销量', icon: '' },
-        { title: '筛选', icon: require('@/assets/sort/筛选.png') }
+        { title: '筛选', icon: require('@/assets/search/筛选.png') }
       ],
       list: [
         { name: '1', img: '', cost: '1', count: 1 },
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     // img (a) {
-    //   return require('@/assets/sort/' + a + '.png')
+    //   return require('@/assets/search/' + a + '.png')
     // },
     tosearch () {
       this.$router.push('./searchfor')

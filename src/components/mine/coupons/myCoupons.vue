@@ -23,7 +23,7 @@
 
 <script>
 import tabGroup from '@/components/group/tab'
-import couponsGroup from './coupons'
+import couponsGroup from './coupongroup'
 export default {
   components: {
     tabGroup: tabGroup,
@@ -46,8 +46,8 @@ export default {
     },
     getmyCouponList () {
       this.$http
-        .get('ferrobag-server/coupon/myCouponList', {
-          params: { userId: 1, pageNum: 1, pageSize: 4 }
+        .get('ferrobag-server/receive/myCouponList', {
+          params: { userId: 1, pageNum: 1, pageSize: 5 }
         })
         .then(res => {
           this.myCouponList = res.data.data

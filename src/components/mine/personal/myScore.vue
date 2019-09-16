@@ -1,5 +1,5 @@
 <template>
-  <div class="myPoints">
+  <div class="myScore">
     <tabGroup :title="title"></tabGroup>
     <div class="part1">
       <div class="money">130</div>
@@ -9,7 +9,7 @@
     <span class="heard">积分明细</span>
     <div class="part2">
       <div>
-        <div class="fl" v-if="a">登录APP</div>s
+        <div class="fl" v-if="a">登录APP</div>
         <div class="fr">
           <span class="money fr">+20</span>
           <br />
@@ -35,13 +35,22 @@ export default {
   },
   props: {},
   computed: {},
+  mounted () {
+    this.getMyScoreList()
+  },
   methods: {
+    getMyScoreList () {
+      this.$http.get('ferrobag-server/score/getMyScoreList', {params: {pageNum: 1, pageSize: 10, userId: 14
+      }}).then(res => {
+        this.myScoreList = res.data.data
+      })
+    }
   }
 }
 </script>
 
 <style lang="scss" >
-.myPoints {
+.myScore {
   .part1 {
     text-align: center;
     height: 7rem;

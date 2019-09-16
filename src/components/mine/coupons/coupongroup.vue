@@ -1,5 +1,5 @@
 <template>
-  <div class="coupons">
+  <div class="coupongroup">
     <div class="boday">
       <div class="left">
         <div style="margin:1.4rem 0 0 1.5rem">
@@ -52,7 +52,7 @@ export default {
   },
   props: {
     amount: {
-      type: String,
+      type: Number,
       required: false,
       default: ''
     },
@@ -99,7 +99,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.coupons {
+.coupongroup {
   padding: 0.875rem 0.875rem 0 0.875rem;
   .left {
     position: relative;

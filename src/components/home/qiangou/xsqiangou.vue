@@ -1,5 +1,5 @@
 <template>
-  <div class="pintuan">
+  <div class="xsqiangou">
  <tabGroup :title="title" :icon="src"></tabGroup>
     <div class="time">
       <div
@@ -105,7 +105,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.pintuan {
+.xsqianggou {
   .dapai {
     padding: 0.625rem;
     margin: 0.625rem;

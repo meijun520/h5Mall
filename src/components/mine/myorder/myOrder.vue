@@ -1,5 +1,5 @@
 <template>
-  <div class="order">
+  <div class="myOrder">
     <tabGroup :title="title" ></tabGroup>
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
@@ -39,11 +39,20 @@ export default {
     }
   },
   props: {},
+  mounted () {
+    this.getMyOrderList()
+  },
   methods: {
     getback () {
       // this.$router.push('/orderhome')
       // history.go(-1)
       this.$router.push({path: '/', query: {index: this.$route.query.from}})
+    },
+    getMyOrderList () {
+      this.$http.get('ferrobag-server/order/getMyOrderList', {params: {pageNum: 1, pageSize: 10, userId: 217, status: 1
+      }}).then(res => {
+        this.myOrderList = res.data.data
+      })
     }
   }
 
@@ -51,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.order{
+.myOrder{
   .left-arrow {
   position: absolute;
   width: 30px;

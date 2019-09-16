@@ -1,5 +1,5 @@
 <template>
-  <div class="collect">
+  <div class="coupon">
     <tabGroup :title="title" :ab="ab" @toother="mycoupons"></tabGroup>
     <tab :scroll-threshold="5" class="tab" active-color="red">
       <tab-item v-for="(item,key) in list" :key="key" :selected="n===key">{{item}}</tab-item>
@@ -21,7 +21,7 @@
 <script>
 import { XHeader, Tab, TabItem, XProgress } from 'vux'
 import tabGroup from '@/components/group/tab'
-import couponsGroup from './coupons'
+import couponsGroup from './coupongroup'
 export default {
   components: {
     XHeader,
@@ -54,7 +54,7 @@ export default {
     getCouponList () {
       this.$http
         .get('ferrobag-server/coupon/getCouponList', {
-          params: { pageNum: 1, pageSize: 3 }
+          params: { pageNum: 1, pageSize: 5 }
         })
         .then(res => {
           this.CouponList = res.data.data

@@ -1,15 +1,13 @@
 <template>
   <div class="faq">
     <tabGroup :title="title"></tabGroup>
-   <group>
+   <group v-for="(item,key) in questionList" :key="key">
       <cell
-      :title="title1"
+      :title="item.questionName"
       is-link
-      :border-intent="false"
-      :arrow-direction="showContent004 ? 'up' : 'down'"
-      @click.native="showContent004 = !showContent004"></cell>
-
-      <p class="slide" v-if="showContent004">A：妃立宝™品牌隶属厦门金童半导体有限公司,旗下拥 有个人洗护,衣服洗护和家居洗护三大系列产品。 妃立宝在国内率先通过先进材料开发实现无泡洗涤 技术,和传统洗衣剂</p>
+      :arrow-direction="iconuodown===key ? 'up' : 'down'"
+      @click.native="updowm(key)"></cell>
+      <p class="slide" v-if="showContent===key">{{item.answers}}</p>
    </group>
   </div>
 </template>
@@ -28,14 +26,33 @@ export default {
   data () {
     return {
       title: '常见问题',
-      title1: 'Q：妃立宝是干嘛的？',
-      showContent004: false,
-      a: true
+      showContent: '',
+      iconuodown: '',
+      questionList: []
     }
   },
   props: {},
   computed: {},
+  mounted () {
+    this.getQuestionList()
+  },
   methods: {
+    getQuestionList () {
+      this.$http.get('ferrobag-server/question/getQuestionList', {
+        params: {pageNum: 1, pageSize: 10}
+      }).then(res => {
+        this.questionList = res.data.data
+      })
+    },
+    updowm (a) {
+      if (this.iconuodown !== a) {
+        this.iconuodown = a
+        this.showContent = a
+      } else {
+        this.iconuodown = ''
+        this.showContent = ''
+      }
+    }
   }
 }
 </script>
@@ -47,6 +64,9 @@ export default {
 font-size:0.875rem;
 color:rgba(153,153,153,1);
 line-height:1.56rem;
+  }
+  .weui-cells{
+    margin-top: 0rem;
   }
 }
 </style>

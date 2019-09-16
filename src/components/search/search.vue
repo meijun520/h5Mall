@@ -1,5 +1,5 @@
 <template>
-  <div class="sort">
+  <div class="search">
     <search-for :neir="neir"  @click.native="tosearch()"></search-for>
     <div class="div">
       <div class="fl">
@@ -89,7 +89,7 @@ export default {
     //   return require('./img/' + icon + '.png')
     // },
     getzhu () {
-      return require('@/assets/sort/主图.png')
+      return require('@/assets/search/主图.png')
     },
     producttype () {
       this.$http.get('ferrobag-server/productType/all').then(res => {
@@ -108,7 +108,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sort{
+.search{
 .search {
     margin-top: 1.69rem;
     width: 95vw;

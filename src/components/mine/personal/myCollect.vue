@@ -69,6 +69,9 @@ export default {
   },
   props: {},
   computed: {},
+  mounted () {
+    this.getCollectList()
+  },
   methods: {
     to () {
       if (this.a === true) {
@@ -97,7 +100,20 @@ export default {
       this.show = false
     },
     onConfirm () {
-      alert('删除成功')
+      this.$http.post('ferrobag-server/collect/batchDeleteMyCollect', {params: { userId: 216 }}).then(
+        res => {
+          if (res.data.data === true) {
+            alert('删除成功')
+          } else {
+            alert('失败')
+          }
+        }
+      )
+    },
+    getCollectList () {
+      this.$http.get('ferrobag-server/collect/getCollectList', {params: { pageNum: 1, pageSize: 10, userId: 1 }}).then(res => {
+        this.collectList = res.data.data
+      })
     }
 
   }

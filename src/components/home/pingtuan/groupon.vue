@@ -1,5 +1,5 @@
 <template>
-  <div class="pintuan">
+  <div class="groupon">
     <tabGroup :title="title" ></tabGroup>
     <div class="dapai">
       <div>
@@ -53,7 +53,7 @@ export default {
       this.$router.push({path: './pindetial', query: {id: this.list[key].productId}})
     },
     pintuanlist () {
-      this.$http.get('ferrobag-server/groupon/getGrouponList', {params: {pageNum: 1, pageSize: 3}}).then(res => {
+      this.$http.get('ferrobag-server/groupon/getGrouponList', {params: {pageNum: 1, pageSize: 4}}).then(res => {
         console.log(res)
         this.list = res.data.data
       }
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.pintuan {
+.groupon {
   .dapai {
     padding: 0.625rem;
     margin: 0.625rem;
@@ -78,6 +78,7 @@ export default {
     }
     .body {
       margin-top: 0.75rem;
+      overflow: hidden;
       .fx {
         margin-top:2.5rem;
         color: #ff4f71;

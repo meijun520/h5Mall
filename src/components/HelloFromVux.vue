@@ -38,7 +38,7 @@
 
 <script>
 import { Tabbar, TabbarItem, Cell } from 'vux'
-import sortPage from './sort/sort'
+import sortPage from './search/search'
 import cartDetial from './cart/cartdetial'
 import indexPage from './home/index'
 import orderHome from './mine/orderhome'

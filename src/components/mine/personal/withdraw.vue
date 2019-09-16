@@ -1,8 +1,8 @@
 <template>
-  <div class="cashOut">
+  <div class="withdraw">
     <tabGroup :title="title"></tabGroup>
     <div class="part1">
-      <h1>¥ 100.00</h1>
+      <h1>¥ <input class="input" v-model="money" type="number"></h1>
       <p>
         
 <span>充值金额</span>
@@ -11,10 +11,10 @@
       
     </div>
     <group title="提现到支付宝">
-          <x-input title="账号" v-model="value1"></x-input>
-              <x-input title="姓名" v-model="value2"></x-input>
+          <x-input title="账号" v-model="account"></x-input>
+              <x-input title="姓名" v-model="realName"></x-input>
     </group>
-     <big-anniu :title="title1"></big-anniu>
+     <big-anniu :title="title1" @click.native="withdraw()"></big-anniu>
   </div>
 </template>
 
@@ -34,23 +34,41 @@ export default {
     return {
       title: '提现',
       title1: '提交',
-      value1: '',
-      value2: ''
+      realName: '',
+      money: '',
+      account: ''
     }
   },
   props: {},
   computed: {},
   methods: {
+    withdraw () {
+      this.$http.post('ferrobag-server/deal/applyWithdraw', { userId: 247, account: this.account, realName: this.realName, money: this.money }).then(
+        res => {
+          if (res.data.data === true) {
+            alert('提现成功')
+          } else {
+            alert('提现失败')
+          }
+        }
+      )
+    }
 
   }
 }
 </script>
 
 <style lang="scss" >
-.cashOut {
+.withdraw {
   .part1{
 background: #FFFFFF;
 padding:1rem 2.1rem;
+.input{
+  border:none;
+  color:#3B3A3A;
+  font-size: 2.125rem;
+  width: 10rem;
+}
 h1{
   border-bottom:0.012rem solid #E6E6E6;
 }
