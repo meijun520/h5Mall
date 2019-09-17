@@ -1,5 +1,5 @@
 <template>
-  <div class="xsqiangou">
+  <div class="seckill">
  <tabGroup :title="title" :icon="src"></tabGroup>
     <div class="time">
       <div
@@ -24,9 +24,9 @@
           <p style="color:#999999; font-size:0.75rem;">{{item.productId}}</p>
           <div style="height: 2rem;
     line-height: 2rem;">
-    <x-progress :percent="item.provideNumber" :show-cancel="false" ></x-progress>
+    <x-progress :percent="item.count" :show-cancel="false" ></x-progress>
           <span>
- &nbsp;{{item.provideNumber}}%
+ &nbsp;{{item.count}}%
           </span>
           </div>
       
@@ -94,7 +94,9 @@ export default {
       this.shu = item
     },
     getseckilllist () {
-      this.$http.get('ferrobag-server/seckill/getAll').then(res => {
+      this.$http.get('ferrobag-server/seckill/getSeckillList', {params: {
+        pageSize: 5, pageNum: 1
+      }}).then(res => {
         this.seckilllist = res.data.data
       })
     },
@@ -105,7 +107,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.xsqianggou {
+.seckill {
   .dapai {
     padding: 0.625rem;
     margin: 0.625rem;

@@ -33,7 +33,7 @@
           :imgurl="item.img"
           :cost="item.cost"
           style="float:left"
-          @click.native="goodsneir ()"
+          @click.native="productDetail ()"
         ></pai-lie>
         <div style="clear:both;"></div>
       </div>
@@ -68,7 +68,7 @@
       </div>
       <div style="margin-top:1rem; ">
         人气TOP榜
-        <div class="res" @click="goodsneir()">
+        <div class="res" @click="productDetail()">
 <img src='./picture/位图(1).png' style="width: calc(100vw - 1.5rem);"/>
         <img src='./picture/第一.png' class="abs">
         </div>
@@ -78,7 +78,7 @@
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" class="res">
             <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
-            @click.native="goodsneir ()"></pai-lie>
+            @click.native="productDetail ()"></pai-lie>
              <img :src="item.img1" class="abs">
           </flexbox-item>
         </flexbox>
@@ -124,19 +124,19 @@
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key">
             <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
-            @click.native="goodsneir ()"></pai-lie>
+            @click.native="productDetail ()"></pai-lie>
           </flexbox-item>
         </flexbox>
         <flexbox :gutter="0" wrap="wrap">
           <flexbox-item :span="1/3" v-for="(item,key) in list1" :key="key" >
             <pai-lie :title="item.name" :imgurl="item.img" :cost="item.cost"
-            @click.native="goodsneir ()"></pai-lie>
+            @click.native="productDetail ()"></pai-lie>
           </flexbox-item>
         </flexbox>
         <x-button type="warn" @click.native="huiyuan()">开通会员</x-button>
       </div>
       <div class="div6">
-        <p @click="toxsqiangou()">限时抢购</p>
+        <p @click="tosecKill()">限时抢购</p>
         <div
           v-for="(item,key) in list2"
           :key="key"
@@ -189,7 +189,7 @@ import {
   TabItem,
   XProgress
 } from 'vux'
-import paiLie from '@/components/goods'
+import paiLie from '@/components/group/goods'
 import searchFor from './demo1/search'
 
 const baseList = [
@@ -334,14 +334,14 @@ export default {
     pintuangoods () {
       this.$router.push('./pintuangoods')
     },
-    toxsqiangou () {
-      this.$router.push('./xsqiangou')
+    tosecKill () {
+      this.$router.push('./secKill')
     },
     tosearch () {
       this.$router.push('./searchfor')
     },
-    goodsneir () {
-      this.$router.push('./goodsneir')
+    productDetail () {
+      this.$router.push('./productDetail')
     },
     pintuangoodsneir () {
       this.$router.push('./pintuangoodsneir')

@@ -31,7 +31,7 @@ export default {
   computed: {},
   methods: {
     fankui () {
-      this.$http.post('ferrobag-server/feedback/addFeedback', {params: { userId: 1, content: this.neir }}).then(res => {
+      this.$http.post('ferrobag-server/feedback/addFeedback', { userId: 1, content: this.neir }).then(res => {
 
       })
     }

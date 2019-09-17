@@ -100,7 +100,7 @@ export default {
       this.show = false
     },
     onConfirm () {
-      this.$http.post('ferrobag-server/collect/batchDeleteMyCollect', {params: { userId: 216 }}).then(
+      this.$http.post('ferrobag-server/collect/batchDeleteMyCollect', { userId: 216 }).then(
         res => {
           if (res.data.data === true) {
             alert('删除成功')

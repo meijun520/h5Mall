@@ -8,12 +8,12 @@
       v-for="(item,key) in CouponList"
       :key="key"
       :amount="item.amount"
-      :description="item.description"
-      :couponName="item.couponName"
-      :count="item.receiveCount"
+      :minPoint="item.minPoint"
+      :couponType="item.couponType"
+      :receiveCount="item.receiveCount"
       :platform="item.platform"
       :enableTime="item.endTime"
-      
+      :b='true'
     ></coupons-group>
   </div>
 </template>

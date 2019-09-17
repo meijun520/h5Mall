@@ -9,6 +9,12 @@
       <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
         <button slot="right" class="button">获取动态码</button>
       </x-input>
+      <x-input placeholder="请设置密码" v-model="password" type='password'>
+        <img slot="right-full-height" src="./删除.png" @click="clear()"/>
+      </x-input>
+      <x-input placeholder="确认密码" v-model="qpassword" type='password'>
+        <img slot="right-full-height" src="./删除.png" @click="clear()"/>
+      </x-input>
     </group>
     <div class="gcs-checkbox">
       <input type="checkbox" />
@@ -39,7 +45,9 @@ export default {
     return {
       anniu: '登录',
       line: '请选择授权登录方式',
-      phone: ''
+      phone: '',
+      qpassword: '',
+      password: ''
     }
   },
   props: {},

@@ -6,11 +6,11 @@
         v-for="(item,key) in myCouponList"
         :key="key"
         :amount="item.amount"
-        :description="item.couponType"
-        :couponName="item.couponName"
-        :platform="item.deleted"
-        :enableTime="item.endTime"
-        :b="false"
+        :minPoint="item.minPoint"
+        :couponType="item.couponType"
+        :platform="item.platform"
+        :enableTime="item.useTime"
+        :b="b"
         :status="item.useStatus"
       ></coupons-group>
     </div>
@@ -33,7 +33,8 @@ export default {
     return {
       title: '我的优惠券',
       myCouponList: [],
-      a: true
+      a: true,
+      b: false
     }
   },
   props: {},

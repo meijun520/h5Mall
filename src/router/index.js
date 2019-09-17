@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloFromVux'
 import searchfor from '@/components/home/demo1/searchfor'
-import pailie from '@/components/pailie'
 import assess from '@/components/mine/myorder/assess'
 import coupon from '@/components/mine/coupons/coupon'
 import myOrder from '@/components/mine/myorder/myOrder'
@@ -10,15 +9,15 @@ import orderhome from '@/components/mine/orderhome'
 import pindetial from '@/components/home/pingtuan/pindetial'
 import orderdetial from '@/components/mine/myorder/orderdetial'
 import groupon from '@/components/home/pingtuan/groupon'
-import xsqiangou from '@/components/home/qiangou/xsqiangou'
+import seckill from '@/components/home/qiangou/seckill'
 import personalData from '@/components/mine/personal/personalData'
 import pintuangoods from '@/components/home/pingtuan/pintuangoods'
 import massage from '@/components/mine/massage/massage'
 import systemMassage from '@/components/mine/massage/systemMassage'
 import dealMassage from '@/components/mine/massage/dealMassage'
 import dingDan from '@/components/cart/dingdan/dingdan'
-import adress from '@/components/cart/adress/adress'
-import newadress from '@/components/cart/adress/newadress'
+import myAdress from '@/components/mine/adress/myAdress'
+import newadress from '@/components/mine/adress/newadress'
 import addhui from '@/components/mine/huiyuan/addhui'
 import set from '@/components/mine/setting/set'
 import view from '@/components/mine/setting/view'
@@ -26,7 +25,7 @@ import aboutus from '@/components/mine/setting/aboutus'
 import becomemar from '@/components/mine/coupons/becomemar'
 import fukuan from '@/components/cart/dingdan/fukuan'
 import payfinish from '@/components/cart/dingdan/payfinish'
-import goodsneir from '@/components/group/goodsneir'
+import productDetail from '@/components/group/productDetail'
 import pingjia from '@/components/group/pingjia'
 import logistics from '@/components/mine/myorder/logistics'
 import coupongroup from '@/components/mine/coupons/coupongroup'
@@ -66,11 +65,6 @@ export default new Router({
       component: searchfor
     },
     {
-      path: '/pailie',
-      name: 'pailie',
-      component: pailie
-    },
-    {
       path: '/assess',
       name: 'assess',
       component: assess
@@ -106,9 +100,9 @@ export default new Router({
       component: groupon
     },
     {
-      path: '/xsqiangou',
-      name: 'xsqiangou',
-      component: xsqiangou
+      path: '/seckill',
+      name: 'seckill',
+      component: seckill
     },
     {
       path: '/personalData',
@@ -143,7 +137,7 @@ export default new Router({
     {
       path: '/addressList',
       name: 'addressList',
-      component: adress
+      component: myAdress
     },
     {
       path: '/newAddress',
@@ -191,13 +185,13 @@ export default new Router({
       component: payfinish
     },
     {
-      path: '/goodsneir',
-      name: 'goodsneir',
-      component: goodsneir
+      path: '/productDetail',
+      name: 'productDetail',
+      component: productDetail
     },
     {path: '/pintuangoodsneir',
       name: 'pintuangoodsneir',
-      component: goodsneir
+      component: productDetail
 
     },
     {

@@ -5,16 +5,16 @@
         <div style="margin:1.4rem 0 0 1.5rem">
           <div class="banyuan1"></div>
           <span>¥{{amount}}</span>
-          <div style="font-size:0.75rem;color:#999999;">{{description}}</div>
+          <div style="font-size:0.75rem;color:#999999;">满{{minPoint}}元使用</div>
         </div>
         <div class="quan">
-          <span style="font-size:0.812rem">{{couponName}}</span>
+          <span style="font-size:0.812rem">{{couponType}}</span>
           <div v-show="b">
-            <x-progress :percent="count" :show-cancel="false"></x-progress>
+            <x-progress :percent="receiveCount" :show-cancel="false"></x-progress>
             <div
               style="font-size:0.75rem;color:#999999;position: absolute;top: 1rem;
     left: 8rem;"
-            >{{count}}%</div>
+            >{{receiveCount}}%</div>
           </div>
 
           <div style="font-size:0.625rem;color:#999999;">
@@ -23,9 +23,9 @@
             有效期至：{{enableTime}}
           </div>
         </div>
-        <div class="banyuan2" :class="status===1||count!==0?'active1':''"></div>
+        <div class="banyuan2" :class="status===1||receiveCount!==0?'active1':''"></div>
       </div>
-      <div class="right" :class="status===1||count!==0?'active':''">
+      <div class="right" :class="status===3||status===3?'active':''">
         <span class="black" v-if="status===3" >
         已过期
         </span>
@@ -56,18 +56,18 @@ export default {
       required: false,
       default: ''
     },
-    description: {
+    minPoint: {
+      type: Number,
+      required: false,
+      default: ''
+    },
+    couponType: {
       type: String,
       required: false,
       default: ''
     },
-    couponName: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    count: {
-      type: String,
+    receiveCount: {
+      type: Number,
       required: false,
       default: ''
     },
@@ -87,7 +87,7 @@ export default {
       default: true
     },
     status: {
-      type: String,
+      type: Number,
       required: false,
       default: ''
 
@@ -142,7 +142,7 @@ export default {
   .right {
     text-align:center; 
     height: 5.875rem;
-     background-color: #CECECE;
+    background-color: #ff214c;
     border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
     .black{
       margin:0 auto;
@@ -156,8 +156,7 @@ export default {
   .active{
      text-align:center; 
     height: 5.875rem;
-   
-    background-color: #ff214c;
+  background-color: #ffffff;
     border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
     .black{
       margin:0 auto;

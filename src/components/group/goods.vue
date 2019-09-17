@@ -5,13 +5,14 @@
         <img :src="imgurl" />
       </div>
       <div class="ms">
-        描述{{title}}
+        <span class="word1">{{title}}</span>
         <div style="color: #DA0217;">
           ¥{{cost}}
-          <span style="text-decoration:line-through" class="word" v-if="a">¥{{cost}}</span>
+          <span style="text-decoration:line-through" class="word" v-if="a">¥{{cost1}}</span>
           <span class="word" v-else>已售23件</span>
           <div class="fr">
             <span class="word" v-show="b">余3件</span>
+            <img :src="cart" v-show="c" >
           </div>
         </div>
       </div>
@@ -36,7 +37,12 @@ export default {
       default: ''
     },
     cost: {
-      type: String,
+      type: Number,
+      required: false,
+      default: ''
+    },
+    cost1: {
+      type: Number,
       required: false,
       default: ''
     },
@@ -51,6 +57,16 @@ export default {
       default: ''
     },
     b: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    cart: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    c: {
       type: Boolean,
       required: false,
       default: false
@@ -88,6 +104,9 @@ export default {
   .word {
     color: #999999;
     font-size: 0.75rem;
+  }
+  .word1{
+      font-size: 0.81rem;
   }
   .fr {
     float: right;

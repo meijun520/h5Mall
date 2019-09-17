@@ -6,7 +6,7 @@
         <span>2017-06-12 09:00</span>
       </div>
       <div class="div1">
-        <p>限时1折抢购商品开始啦！</p>
+        <p>限时1折l商品开始啦！</p>
         <div class="area">
 
         </div>

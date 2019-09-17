@@ -6,7 +6,7 @@
       <x-input placeholder="请输入手机号码" v-model="phone">
         <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
+      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false" v-model="verCod">
         <button slot="right" class="button">获取动态码</button>
       </x-input>
     </group>
@@ -57,7 +57,8 @@ export default {
         { label: '微博', src: '微博', router: '' },
         { label: '短信登录', src: '短信', router: '' }
       ],
-      phone: ''
+      phone: '',
+      verCod: ''
     }
   },
   props: {},
@@ -79,10 +80,21 @@ export default {
       this.$router.push('/changepassword')
     },
     success () {
-      this.$router.push({
-        path: '/',
-        query: { index: this.$route.query.from }
-      })
+      this.$http
+        .post('ferrobag-server/user/acLogin', {
+          userName: this.phone,
+          verCod: this.verCod
+        })
+        .then(res => {
+          if (res.data.data === true) {
+            this.phone = ''
+            this.verCod = ''
+            this.$router.push({
+              path: '/',
+              query: { from: this.$route.query.index }
+            })
+          }
+        })
     },
     clear () {
       this.phone = ''

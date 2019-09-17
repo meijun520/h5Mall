@@ -65,7 +65,7 @@ import {
   Confirm,
   TransferDomDirective as TransferDom
 } from 'vux'
-import paiLie from '@/components/goods'
+import paiLie from '@/components/group/goods'
 import shopMessage from './shopMessage'
 import shopOrder from './shopOrder'
 

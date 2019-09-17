@@ -4,47 +4,37 @@
     <h2>密码登录</h2>
     <group>
       <x-input placeholder="请输入手机号码" v-model="phone">
-        <img
-          slot="right-full-height"
-          src="./删除.png"
-          @click="clear()"
-        />
+        <img slot="right-full-height" src="./删除.png" @click="clear()" />
       </x-input>
       <x-input class="weui-vcode" placeholder="输入密码" v-model="password" type="password">
-           <img
-          slot="right-full-height"
-          src="./删除.png"
-          @click="clear1()"
-        />
+        <img slot="right-full-height" src="./删除.png" @click="clear1()" />
       </x-input>
     </group>
     <span class="fr" @click="changepassword()">忘记密码？</span>
     <big-anniu :title="anniu" @click.native="orderhome()"></big-anniu>
     <div class="center">
-    <span @click="login()">验证码登录</span>
+      <span @click="login()">验证码登录</span>
       丨
       <span @click="register()">新用户注册</span>
-      </div>
-    <div style="position:fixed; bottom:0rem; left:0rem; width:100vw;">
- 
-    <div class="border">
-      <span>请选择授权登录方式</span>
     </div>
-    <grid :show-lr-borders="false" :show-vertical-dividers="false">
-      <grid-item  label="微信">
-        <img slot="icon" src="./img/微信.png">
-      </grid-item>
-      <grid-item  label="QQ">
-        <img slot="icon" src="./img/qq.png">
-      </grid-item>
-      <grid-item label="微博">
-        <img slot="icon" src="./img/微博.png">
-      </grid-item>
-      <grid-item label="短信登录">
-        <img slot="icon" src="./img/短信.png">
-      </grid-item>
-    </grid>
-         
+    <div style="position:fixed; bottom:0rem; left:0rem; width:100vw;">
+      <div class="border">
+        <span>请选择授权登录方式</span>
+      </div>
+      <grid :show-lr-borders="false" :show-vertical-dividers="false">
+        <grid-item label="微信">
+          <img slot="icon" src="./img/微信.png" />
+        </grid-item>
+        <grid-item label="QQ">
+          <img slot="icon" src="./img/qq.png" />
+        </grid-item>
+        <grid-item label="微博">
+          <img slot="icon" src="./img/微博.png" />
+        </grid-item>
+        <grid-item label="短信登录">
+          <img slot="icon" src="./img/短信.png" />
+        </grid-item>
+      </grid>
     </div>
   </div>
 </template>
@@ -80,10 +70,21 @@ export default {
       this.$router.push('/register')
     },
     orderhome () {
-      this.$router.push({
-        path: '/',
-        query: { from: this.$route.query.index }
-      })
+      this.$http
+        .post('ferrobag-server/user/login', {
+          userName: this.phone,
+          password: this.password
+        })
+        .then(res => {
+          if (res.data.data === true) {
+            this.phone = ''
+            this.password = ''
+            this.$router.push({
+              path: '/',
+              query: { from: this.$route.query.index }
+            })
+          }
+        })
     },
     clear () {
       this.phone = ''
@@ -128,7 +129,6 @@ export default {
     text-align: center;
     font-size: 0.82rem;
     color: #1987ff;
-   
   }
   .border {
     border-top: 0.0625rem dashed #999999;
@@ -137,19 +137,19 @@ export default {
     span {
       font-size: 0.82rem;
       color: #999999;
-     position: relative;
-     top:-1rem;
-     background-color: #ffffff; 
+      position: relative;
+      top: -1rem;
+      background-color: #ffffff;
     }
   }
-  .weui-grid__icon{
+  .weui-grid__icon {
     height: 2.93rem;
     width: 2.93rem;
   }
-  .weui-grids:before{
-    border:none;
+  .weui-grids:before {
+    border: none;
   }
-   .vux-x-input-right-full {
+  .vux-x-input-right-full {
     line-height: 3.3rem;
     img {
       height: 1.3rem;

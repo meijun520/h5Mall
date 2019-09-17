@@ -1,5 +1,5 @@
 <template>
-  <div class="adress">
+  <div class="myAdress">
     <tabGroup :title="title"></tabGroup>
     <div v-if="adress">
       <div
@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style lang="scss" >
-.adress {
+.myAdress {
   height: 100vh;
   background-color: #ffffff;
   .address1 {

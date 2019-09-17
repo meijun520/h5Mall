@@ -16,15 +16,16 @@
           :cost="item.cost"
           :border="false"
           class="pai"
-          :che="src"
-          @click.native="goodsneir ()"
+          :cart="src"
+          :c="true"
+          @click.native="productDetail ()"
         ></pai-lie>
         <div style="clear:both; margin-bottom:10rem"></div>
   </div>
 </template>
 
 <script>
-import paiLie from '@/components/goods'
+import paiLie from '@/components/group/goods'
 export default {
   components: {
     paiLie: paiLie
@@ -36,12 +37,12 @@ export default {
         { name: '1', img: '', cost: '2', count: 2 },
         { name: '2', img: '', cost: '3', count: 3 }
       ],
-      src: require('./9.png')
+      src: require('@/assets/search/购物车.png')
     }
   },
   methods: {
-    goodsneir () {
-      this.$router.push('/goodsneir')
+    productDetail () {
+      this.$router.push('/productDetail')
     }
 
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="goodsneir">
+  <div class="productDetail">
     <tabGroup :title="title" :icon="src"></tabGroup>
     <swiper
       :list="demo02_list"
@@ -176,6 +176,7 @@ export default {
 
   mounted () {
     window.scroll(0, 0)
+    this.productDetail()
   },
   methods: {
     topingjia () {
@@ -183,13 +184,18 @@ export default {
     },
     dingdan () {
       this.$router.push('./dingdan')
+    },
+    productDetail () {
+      this.$http.get('ferrobag-server/product/getProductById/456').then(res => {
+        res.productDetail = res.data.data
+      })
     }
   }
 }
 </script>
 
 <style lang="scss" >
-.goodsneir {
+.productDetail {
   .div {
     .word {
       color: #a1a1a1;

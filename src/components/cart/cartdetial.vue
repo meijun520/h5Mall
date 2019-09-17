@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import paiLie from '@/components/goods'
+import paiLie from '@/components/group/goods'
 import detialList from './detiallist'
 import { Flexbox, FlexboxItem, CheckIcon, XButton } from 'vux'
 import youLike from '@/components/group/youlike'

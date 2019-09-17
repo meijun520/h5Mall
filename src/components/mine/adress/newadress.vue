@@ -1,5 +1,5 @@
 <template>
-  <div class="adress">
+  <div class="newadress">
     <tabGroup :title="$route.path==='/editAddress'?'编辑地址':'新增地址'"></tabGroup>
     <group>
       <x-input title="姓名" name="username" placeholder="请输入姓名" is-type="china-name" v-model="this.form.userId"></x-input>
