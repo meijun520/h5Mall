@@ -146,8 +146,9 @@ export default {
     box-shadow: 0px 0.25rem 0.5rem 0px rgba(255, 175, 189, 1);
     border-radius: 2.2rem;
     border: none;
-    color: #ffffff;
+    color: #fffffe;
     font-size: 1rem;
+
     margin: 1rem;
   }
   .avatar-uploader .el-upload {
