@@ -76,7 +76,8 @@ export default {
           password: this.password
         })
         .then(res => {
-          if (res.data.data === true) {
+          console.log(res)
+          if (res.data.code === '200') {
             this.phone = ''
             this.password = ''
             this.$router.push({

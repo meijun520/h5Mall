@@ -6,7 +6,7 @@
       <x-input placeholder="请输入手机号码" v-model="phone">
         <img slot="right-full-height" src="./删除.png" @click="clear()"/>
       </x-input>
-      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false">
+      <x-input class="weui-vcode" placeholder="输入短信验证码" :show-clear="false" v-model="verCode">
         <button slot="right" class="button">获取动态码</button>
       </x-input>
       <x-input placeholder="请设置密码" v-model="password" type='password'>
@@ -47,7 +47,8 @@ export default {
       line: '请选择授权登录方式',
       phone: '',
       qpassword: '',
-      password: ''
+      password: '',
+      verCode: ''
     }
   },
   props: {},
@@ -57,7 +58,22 @@ export default {
       this.$router.push('/login')
     },
     orderhome () {
-      this.$router.push('/orderhome')
+      this.$http
+        .post('ferrobag-server//user/register', {
+          userName: this.phone,
+          verCode: this.verCode,
+          password: this.password,
+          confPassword: this.qpassword
+        })
+        .then(res => {
+          if (res.data.data === true) {
+            this.phone = ''
+            this.verCode = ''
+            this.password = ''
+            this.qpassword = ''
+            this.$router.push('/orderhome')
+          }
+        })
     },
     clear () {
       this.phone = ''
